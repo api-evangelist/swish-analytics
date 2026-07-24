@@ -1,0 +1,1362 @@
+openapi: 3.1.0
+info:
+  title: Swish Analytics Sportsbook ATP Tennis Soccer API
+  version: v1
+  description: 'Machine-learning sportsbook data API from Swish Analytics: player prop pricing, pre-match and in-play match/team markets, bet-request (single and parlay) pricing, and results across NFL, NBA, MLB, NHL, NCAA basketball & football, ATP, WTA and soccer. Derived by the API Evangelist enrichment pipeline from the provider''s live documentation service (docs-api.swishanalytics.com/v1). Content is faithful to published docs; not an authoritative provider-published OpenAPI.'
+  termsOfService: https://swishanalytics.com
+  contact:
+    name: Swish Analytics
+    url: https://docs.swishanalytics.com
+  x-apievangelist:
+    generated: '2026-07-21'
+    method: derived
+    source: 'https://docs-api.swishanalytics.com/v1 (live documentation service: /markets, /documentation/params, /documentation/response-fields)'
+    note: Faithfully derived from Swish Analytics live developer documentation; endpoint list, query parameters and response fields are provider-published. Not an authoritative provider-published OpenAPI.
+servers:
+- url: https://api.swishanalytics.com
+  description: Production
+security:
+- ApiKey: []
+tags:
+- name: Soccer
+paths:
+  /soccer/matches/markets/inplay:
+    get:
+      operationId: getSoccerMatchesMarketsInplay
+      summary: Soccer Matches Markets Inplay
+      tags:
+      - Soccer
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  abbr:
+                    type: string
+                    description: Provides the 3-letter abbreviation for the specified home or away team
+                  abbreviation:
+                    type: string
+                    description: Provides the appropriate abbreviation for the specified market duration
+                  awaySummaryId:
+                    type: string
+                    description: Provides a unique market identifier for the specified sport, team, match, week and away team
+                  balanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either balanced (1) or unballanced (0)
+                  count:
+                    type: number
+                    description: Provides the total count of markets returned by your request
+                  dataConfirmed:
+                    type: boolean
+                    description: Provides the value identifying the returned results as either confirmed (true) or not confirmed (false)
+                  date:
+                    type: string
+                    description: Provides the UTC date(s) of the event(s) for the specified markets returned by your request
+                  description:
+                    type: string
+                    description: Provides a text-snippet denoting the state of the market, status, etc
+                  endpoint:
+                    type: string
+                    description: Provides the specific endpoint used to make your request to assist in validating requests
+                  homeSummaryId:
+                    type: string
+                    description: Provides a unique market identifier for the specified sport, team, match, week and home team
+                  id:
+                    type: number
+                    description: Provides the appropriate ID for the specified team, market type, etc
+                  line:
+                    type: number
+                    nullable: true
+                    description: Provides the line offered for the specified markets returned by your request
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying a market as either suspended (true) or not suspended (false)
+                  matchId:
+                    type: number
+                    description: Provides the ID value of the match associated with the markets returned by your request
+                  mean:
+                    type: number
+                    nullable: true
+                    description: Provides the raw mean projection value for the specified markets returned by your request
+                  median:
+                    type: number
+                    nullable: true
+                    description: Provides the raw median projection value for the specified markets returned by your request
+                  micro:
+                    type: string
+                    description: Provides the UTC timestamp in a micro-seconds format denoting when the associated market was last updated with new data
+                  optimal:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either optimal (1) or not optimal (0)
+                  over:
+                    type: number
+                    nullable: true
+                    description: Provides the Over outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  push:
+                    type: number
+                    nullable: true
+                    description: Provides the Push outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  season:
+                    type: number
+                    description: The 4-digit year of the season associated with the specified markets returned by your request. For seasons that span multiple calendar years (eg 2019-2020), the first calendar year is returned
+                  seconds:
+                    type: string
+                    description: Provides the UTC timestamp in a seconds format denoting when the associated market was last updated with new data
+                  settled:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either settled (true) or not settled (false)
+                  sport:
+                    type: string
+                    description: The 3-letter abbreviation or ID value of the sport associated with the specified markets returned by your request
+                  type:
+                    type: string
+                    description: Provides the description denoting whether the associated market data is for a fractional line or a integer line
+                  under:
+                    type: number
+                    nullable: true
+                    description: Provides the Under outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  value:
+                    type: number
+                    description: Provides the value to be used for resulting and settlement purposes for each market
+                  void:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either voided (true) or not voided (false)
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: game
+        in: query
+        required: false
+        description: The ID value of the event for which you are requesting market data. Accepts only a single value
+        schema:
+          type: number
+        example: '361140'
+      - name: lineType
+        in: query
+        required: false
+        description: Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values
+        schema:
+          type: string
+        example: fraction
+      - name: stat
+        in: query
+        required: false
+        description: The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values
+        schema:
+          type: number
+        example: '9001001002'
+      - name: modifiedAtMicroGreater
+        in: query
+        required: false
+        description: The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received
+        schema:
+          type: string
+        example: '2026-03-09 21:40:27.930075'
+  /soccer/matches/markets/inplay/alternates:
+    get:
+      operationId: getSoccerMatchesMarketsInplayAlternates
+      summary: Soccer Matches Markets Inplay Alternates
+      tags:
+      - Soccer
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  abbr:
+                    type: string
+                    description: Provides the 3-letter abbreviation for the specified home or away team
+                  abbreviation:
+                    type: string
+                    description: Provides the appropriate abbreviation for the specified market duration
+                  awaySummaryId:
+                    type: string
+                    description: Provides a unique market identifier for the specified sport, team, match, week and away team
+                  balanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either balanced (1) or unballanced (0)
+                  count:
+                    type: number
+                    description: Provides the total count of markets returned by your request
+                  dataConfirmed:
+                    type: boolean
+                    description: Provides the value identifying the returned results as either confirmed (true) or not confirmed (false)
+                  date:
+                    type: string
+                    description: Provides the UTC date(s) of the event(s) for the specified markets returned by your request
+                  description:
+                    type: string
+                    description: Provides a text-snippet denoting the state of the market, status, etc
+                  endpoint:
+                    type: string
+                    description: Provides the specific endpoint used to make your request to assist in validating requests
+                  homeSummaryId:
+                    type: string
+                    description: Provides a unique market identifier for the specified sport, team, match, week and home team
+                  id:
+                    type: number
+                    description: Provides the appropriate ID for the specified team, market type, etc
+                  line:
+                    type: number
+                    nullable: true
+                    description: Provides the line offered for the specified markets returned by your request
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying a market as either suspended (true) or not suspended (false)
+                  matchId:
+                    type: number
+                    description: Provides the ID value of the match associated with the markets returned by your request
+                  mean:
+                    type: number
+                    nullable: true
+                    description: Provides the raw mean projection value for the specified markets returned by your request
+                  micro:
+                    type: string
+                    description: Provides the UTC timestamp in a micro-seconds format denoting when the associated market was last updated with new data
+                  milestone:
+                    type: number
+                    description: Provides the value identifying a specified line as either a designated milestone line (1) or not a milestone line (0)
+                  optimal:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either optimal (1) or not optimal (0)
+                  over:
+                    type: number
+                    nullable: true
+                    description: Provides the Over outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  push:
+                    type: number
+                    nullable: true
+                    description: Provides the Push outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  season:
+                    type: number
+                    description: The 4-digit year of the season associated with the specified markets returned by your request. For seasons that span multiple calendar years (eg 2019-2020), the first calendar year is returned
+                  seconds:
+                    type: string
+                    description: Provides the UTC timestamp in a seconds format denoting when the associated market was last updated with new data
+                  settled:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either settled (true) or not settled (false)
+                  sport:
+                    type: string
+                    description: The 3-letter abbreviation or ID value of the sport associated with the specified markets returned by your request
+                  type:
+                    type: string
+                    description: Provides the description denoting whether the associated market data is for a fractional line or a integer line
+                  under:
+                    type: number
+                    nullable: true
+                    description: Provides the Under outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  value:
+                    type: number
+                    description: Provides the value to be used for resulting and settlement purposes for each market
+                  void:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either voided (true) or not voided (false)
+                  wasBalanced:
+                    type: number
+                    description: Provides the value identifying a line for the specified market as either having been a balance line (1) or not having been balanced line (0) at any time in the history of the specified market
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: game
+        in: query
+        required: true
+        description: The ID value of the event for which you are requesting market data. Accepts only a single value
+        schema:
+          type: number
+        example: '343946'
+      - name: lineType
+        in: query
+        required: false
+        description: Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values
+        schema:
+          type: string
+        example: fraction
+      - name: stat
+        in: query
+        required: false
+        description: The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values
+        schema:
+          type: number
+        example: '9001001002'
+      - name: modifiedAtMicroGreater
+        in: query
+        required: false
+        description: The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received
+        schema:
+          type: string
+        example: '2026-04-23 19:03:22.563660'
+      - name: milestone
+        in: query
+        required: false
+        description: Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values
+        schema:
+          type: boolean
+        example: 'true'
+      - name: wasBalanced
+        in: query
+        required: false
+        description: Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values
+        schema:
+          type: boolean
+        example: 'true'
+  /soccer/matches/markets/prematch:
+    get:
+      operationId: getSoccerMatchesMarketsPrematch
+      summary: Soccer Matches Markets Prematch
+      tags:
+      - Soccer
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  abbr:
+                    type: string
+                    description: Provides the 3-letter abbreviation for the specified home or away team
+                  abbreviation:
+                    type: string
+                    description: Provides the appropriate abbreviation for the specified market duration
+                  awaySummaryId:
+                    type: string
+                    description: Provides a unique market identifier for the specified sport, team, match, week and away team
+                  balanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either balanced (1) or unballanced (0)
+                  count:
+                    type: number
+                    description: Provides the total count of markets returned by your request
+                  dataConfirmed:
+                    type: boolean
+                    description: Provides the value identifying the returned results as either confirmed (true) or not confirmed (false)
+                  date:
+                    type: string
+                    description: Provides the UTC date(s) of the event(s) for the specified markets returned by your request
+                  description:
+                    type: string
+                    description: Provides a text-snippet denoting the state of the market, status, etc
+                  endpoint:
+                    type: string
+                    description: Provides the specific endpoint used to make your request to assist in validating requests
+                  homeSummaryId:
+                    type: string
+                    description: Provides a unique market identifier for the specified sport, team, match, week and home team
+                  id:
+                    type: number
+                    description: Provides the appropriate ID for the specified team, market type, etc
+                  line:
+                    type: number
+                    nullable: true
+                    description: Provides the line offered for the specified markets returned by your request
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying a market as either suspended (true) or not suspended (false)
+                  matchId:
+                    type: number
+                    description: Provides the ID value of the match associated with the markets returned by your request
+                  mean:
+                    type: number
+                    nullable: true
+                    description: Provides the raw mean projection value for the specified markets returned by your request
+                  median:
+                    type: number
+                    nullable: true
+                    description: Provides the raw median projection value for the specified markets returned by your request
+                  micro:
+                    type: string
+                    description: Provides the UTC timestamp in a micro-seconds format denoting when the associated market was last updated with new data
+                  optimal:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either optimal (1) or not optimal (0)
+                  over:
+                    type: number
+                    nullable: true
+                    description: Provides the Over outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  push:
+                    type: number
+                    nullable: true
+                    description: Provides the Push outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  season:
+                    type: number
+                    description: The 4-digit year of the season associated with the specified markets returned by your request. For seasons that span multiple calendar years (eg 2019-2020), the first calendar year is returned
+                  seconds:
+                    type: string
+                    description: Provides the UTC timestamp in a seconds format denoting when the associated market was last updated with new data
+                  settled:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either settled (true) or not settled (false)
+                  sport:
+                    type: string
+                    description: The 3-letter abbreviation or ID value of the sport associated with the specified markets returned by your request
+                  type:
+                    type: string
+                    description: Provides the description denoting whether the associated market data is for a fractional line or a integer line
+                  under:
+                    type: number
+                    nullable: true
+                    description: Provides the Under outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  value:
+                    type: number
+                    description: Provides the value to be used for resulting and settlement purposes for each market
+                  void:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either voided (true) or not voided (false)
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: game
+        in: query
+        required: false
+        description: The ID value of the event for which you are requesting market data. Accepts only a single value
+        schema:
+          type: number
+        example: '361140'
+      - name: lineType
+        in: query
+        required: false
+        description: Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values
+        schema:
+          type: string
+        example: fraction
+      - name: stat
+        in: query
+        required: false
+        description: The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values
+        schema:
+          type: number
+        example: '9001001002'
+      - name: modifiedAtMicroGreater
+        in: query
+        required: false
+        description: The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received
+        schema:
+          type: string
+        example: '2026-03-09 21:40:27.930075'
+  /soccer/matches/markets/prematch/alternates:
+    get:
+      operationId: getSoccerMatchesMarketsPrematchAlternates
+      summary: Soccer Matches Markets Prematch Alternates
+      tags:
+      - Soccer
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  abbr:
+                    type: string
+                    description: Provides the 3-letter abbreviation for the specified home or away team
+                  abbreviation:
+                    type: string
+                    description: Provides the appropriate abbreviation for the specified market duration
+                  awaySummaryId:
+                    type: string
+                    description: Provides a unique market identifier for the specified sport, team, match, week and away team
+                  balanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either balanced (1) or unballanced (0)
+                  count:
+                    type: number
+                    description: Provides the total count of markets returned by your request
+                  dataConfirmed:
+                    type: boolean
+                    description: Provides the value identifying the returned results as either confirmed (true) or not confirmed (false)
+                  date:
+                    type: string
+                    description: Provides the UTC date(s) of the event(s) for the specified markets returned by your request
+                  description:
+                    type: string
+                    description: Provides a text-snippet denoting the state of the market, status, etc
+                  endpoint:
+                    type: string
+                    description: Provides the specific endpoint used to make your request to assist in validating requests
+                  homeSummaryId:
+                    type: string
+                    description: Provides a unique market identifier for the specified sport, team, match, week and home team
+                  id:
+                    type: number
+                    description: Provides the appropriate ID for the specified team, market type, etc
+                  line:
+                    type: number
+                    nullable: true
+                    description: Provides the line offered for the specified markets returned by your request
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying a market as either suspended (true) or not suspended (false)
+                  matchId:
+                    type: number
+                    description: Provides the ID value of the match associated with the markets returned by your request
+                  mean:
+                    type: number
+                    nullable: true
+                    description: Provides the raw mean projection value for the specified markets returned by your request
+                  micro:
+                    type: string
+                    description: Provides the UTC timestamp in a micro-seconds format denoting when the associated market was last updated with new data
+                  milestone:
+                    type: number
+                    description: Provides the value identifying a specified line as either a designated milestone line (1) or not a milestone line (0)
+                  optimal:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either optimal (1) or not optimal (0)
+                  over:
+                    type: number
+                    nullable: true
+                    description: Provides the Over outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  push:
+                    type: number
+                    nullable: true
+                    description: Provides the Push outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  season:
+                    type: number
+                    description: The 4-digit year of the season associated with the specified markets returned by your request. For seasons that span multiple calendar years (eg 2019-2020), the first calendar year is returned
+                  seconds:
+                    type: string
+                    description: Provides the UTC timestamp in a seconds format denoting when the associated market was last updated with new data
+                  settled:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either settled (true) or not settled (false)
+                  sport:
+                    type: string
+                    description: The 3-letter abbreviation or ID value of the sport associated with the specified markets returned by your request
+                  type:
+                    type: string
+                    description: Provides the description denoting whether the associated market data is for a fractional line or a integer line
+                  under:
+                    type: number
+                    nullable: true
+                    description: Provides the Under outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  value:
+                    type: number
+                    description: Provides the value to be used for resulting and settlement purposes for each market
+                  void:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either voided (true) or not voided (false)
+                  wasBalanced:
+                    type: number
+                    description: Provides the value identifying a line for the specified market as either having been a balance line (1) or not having been balanced line (0) at any time in the history of the specified market
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: game
+        in: query
+        required: true
+        description: The ID value of the event for which you are requesting market data. Accepts only a single value
+        schema:
+          type: number
+        example: '343946'
+      - name: lineType
+        in: query
+        required: false
+        description: Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values
+        schema:
+          type: string
+        example: fraction
+      - name: stat
+        in: query
+        required: false
+        description: The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values
+        schema:
+          type: number
+        example: '9001001002'
+      - name: modifiedAtMicroGreater
+        in: query
+        required: false
+        description: The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received
+        schema:
+          type: string
+        example: '2026-04-23 19:03:22.563660'
+      - name: milestone
+        in: query
+        required: false
+        description: Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values
+        schema:
+          type: boolean
+        example: 'true'
+      - name: wasBalanced
+        in: query
+        required: false
+        description: Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values
+        schema:
+          type: boolean
+        example: 'true'
+  /soccer/players/props:
+    get:
+      operationId: getSoccerPlayersProps
+      summary: Soccer Players Props
+      tags:
+      - Soccer
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  abbreviation:
+                    type: string
+                    description: Provides the appropriate abbreviation for the specified team
+                  balanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either balanced (true) or unbalanced (false)
+                  count:
+                    type: number
+                    description: Provides the total count of markets returned by your request
+                  dataConfirmed:
+                    type: boolean
+                    description: Provides the value identifying the returned results as either confirmed (true) or not confirmed (false)
+                  date:
+                    type: string
+                    description: Provides the EST date(s) of the event(s) for the specified markets returned by your request
+                  endpoint:
+                    type: string
+                    description: Provides the specific endpoint used to make your request to assist in validating requests
+                  home:
+                    type: boolean
+                    description: Provides the value identifying a market as either for a player on the home team (true) or away (false)
+                  id:
+                    type: number
+                    description: Provides the appropriate ID for the specified team, market type, etc
+                  line:
+                    type: number
+                    nullable: true
+                    description: Provides the line offered for the specified markets returned by your request
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying a market as either suspended (true) or not suspended (false)
+                  marketSuspendedDescription:
+                    type: string
+                    description: Provides the description associated with the specific type of suspension-state a gvien market is in currently
+                  marketSuspendedId:
+                    type: number
+                    description: Provides the ID value associated with the specific type of suspension-state a gvien market is in currently
+                  mean:
+                    type: number
+                    nullable: true
+                    description: Provides the raw mean projection value for the specified markets returned by your request
+                  median:
+                    type: number
+                    nullable: true
+                    description: Provides the raw median projection value for the specified markets returned by your request
+                  modifiedAt:
+                    type: string
+                    description: Provides the UTC date-timestamp identifying when the specified market was last updated with new data
+                  modifiedAtMicro:
+                    type: string
+                    description: Provides the UTC date-timestamp in micro-second format identifying when the specified market was last updated with new data
+                  name:
+                    type: string
+                    description: Provides the name of the specified market return by your request
+                  open:
+                    type: boolean
+                    description: Provides the value identifying a market as either open (true) or not open (false)
+                  optimal:
+                    type: boolean
+                    description: Provides the value identifying a market as either optimal (true) or not optimal (false)
+                  over:
+                    type: number
+                    nullable: true
+                    description: Provides the Over outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  overSuspended:
+                    type: boolean
+                    description: Provides the value identifying the over selection/price as either suspended (true) or not suspended (false)
+                  playerId:
+                    type: number
+                    description: Provides the appropriate ID of the player to whom each market belongs as found in the /nfl/players endpoint
+                  playerName:
+                    type: string
+                    description: Provides the name of the player to whom each market belongs as found in the /nfl/players endpoint
+                  push:
+                    type: number
+                    nullable: true
+                    description: Provides the Push outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  pushSuspended:
+                    type: boolean
+                    description: Provides the value identifying the push selection/price as either suspended (true) or not suspended (false)
+                  season:
+                    type: number
+                    description: The 4-digit year of the season associated with the specified markets returned by your request. For seasons that span multiple calendar years (eg 2019-2020), the first calendar year is returned
+                  settled:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either settled (true) or not settled (false)
+                  sport:
+                    type: string
+                    description: The 3-letter abbreviation of the sport associated with the specified markets returned by your request
+                  starter:
+                    type: boolean
+                    description: Provides the value identifying a market as either for a starting player (true) or a non-starting player (false)
+                  state:
+                    type: string
+                    description: Provides the regional state of origin for the specified team to be used for regulatory purposes as needed
+                  type:
+                    type: string
+                    description: Provides the value denoting whether the specified line is a fraction or integer line
+                  under:
+                    type: number
+                    nullable: true
+                    description: Provides the Under outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  underSuspended:
+                    type: boolean
+                    description: Provides the value identifying the under selection/price as either suspended (true) or not suspended (false)
+                  value:
+                    type: number
+                    description: Provides the value to be used for resulting and settlement purposes for each market
+                  void:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either voided (true) or not voided (false)
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: optimal
+        in: query
+        required: false
+        description: Can be used to request markets classified as optimal (true) or not optimal (false)
+        schema:
+          type: boolean
+        example: 'true'
+      - name: lineType
+        in: query
+        required: false
+        description: Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values
+        schema:
+          type: string
+        example: fraction
+      - name: stat
+        in: query
+        required: false
+        description: The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values
+        schema:
+          type: number
+        example: '9001001001'
+      - name: game
+        in: query
+        required: false
+        description: The ID value of the event for which you are requesting market data. Accepts only a single value
+        schema:
+          type: number
+        example: '348373'
+      - name: modifiedAtMicroGreater
+        in: query
+        required: false
+        description: The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received
+        schema:
+          type: string
+        example: '2025-11-23 18:18:06.674635'
+  /soccer/players/props/alternates:
+    get:
+      operationId: getSoccerPlayersPropsAlternates
+      summary: Soccer Players Props Alternates
+      tags:
+      - Soccer
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  abbreviation:
+                    type: string
+                    description: Provides the appropriate abbreviation for the specified team
+                  balanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either balanced (true) or unbalanced (false)
+                  count:
+                    type: number
+                    description: Provides the total count of markets returned by your request
+                  dataConfirmed:
+                    type: boolean
+                    description: Provides the value identifying the returned results as either confirmed (true) or not confirmed (false)
+                  date:
+                    type: string
+                    description: Provides the EST date(s) of the event(s) for the specified markets returned by your request
+                  endpoint:
+                    type: string
+                    description: Provides the specific endpoint used to make your request to assist in validating requests
+                  home:
+                    type: boolean
+                    description: Provides the value identifying a market as either for a player on the home team (true) or away (false)
+                  id:
+                    type: number
+                    description: Provides the appropriate ID for the specified team, market type, etc
+                  line:
+                    type: number
+                    nullable: true
+                    description: Provides the line offered for the specified markets returned by your request
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying a market as either suspended (true) or not suspended (false)
+                  mean:
+                    type: number
+                    nullable: true
+                    description: Provides the raw mean projection value for the specified markets returned by your request
+                  milestone:
+                    type: boolean
+                    description: Provides the value identifying a specified line as either a designated milestone line (true) or not a milestone line (false)
+                  modifiedAt:
+                    type: string
+                    description: Provides the UTC date-timestamp identifying when the specified market was last updated with new data
+                  modifiedAtMicro:
+                    type: string
+                    description: Provides the UTC date-timestamp in micro-second format identifying when the specified market was last updated with new data
+                  name:
+                    type: string
+                    description: Provides the name of the specified market return by your request
+                  open:
+                    type: boolean
+                    description: Provides the value identifying a market as either open (true) or not open (false)
+                  optimal:
+                    type: boolean
+                    description: Provides the value identifying a market as either optimal (true) or not optimal (false)
+                  over:
+                    type: number
+                    nullable: true
+                    description: Provides the Over outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  overSuspended:
+                    type: boolean
+                    description: Provides the value identifying the over selection/price as either suspended (true) or not suspended (false)
+                  playerId:
+                    type: number
+                    description: Provides the appropriate ID of the player to whom each market belongs as found in the /nfl/players endpoint
+                  playerName:
+                    type: string
+                    description: Provides the name of the player to whom each market belongs as found in the /nfl/players endpoint
+                  push:
+                    type: number
+                    nullable: true
+                    description: Provides the Push outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  pushSuspended:
+                    type: boolean
+                    description: Provides the value identifying the push selection/price as either suspended (true) or not suspended (false)
+                  season:
+                    type: number
+                    description: The 4-digit year of the season associated with the specified markets returned by your request. For seasons that span multiple calendar years (eg 2019-2020), the first calendar year is returned
+                  settled:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either settled (true) or not settled (false)
+                  sport:
+                    type: string
+                    description: The 3-letter abbreviation of the sport associated with the specified markets returned by your request
+                  starter:
+                    type: boolean
+                    description: Provides the value identifying a market as either for a starting player (true) or a non-starting player (false)
+                  type:
+                    type: string
+                    description: Provides the value denoting whether the specified line is a fraction or integer line
+                  under:
+                    type: number
+                    nullable: true
+                    description: Provides the Under outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  underSuspended:
+                    type: boolean
+                    description: Provides the value identifying the under selection/price as either suspended (true) or not suspended (false)
+                  value:
+                    type: number
+                    description: Provides the value to be used for resulting and settlement purposes for each market
+                  void:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either voided (true) or not voided (false)
+                  wasBalanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either having been a balance line (true) or not having been balanced line (false) at any time in the history of the specified market
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: game
+        in: query
+        required: true
+        description: The ID value of the event for which you are requesting market data. Accepts only a single value
+        schema:
+          type: number
+        example: '345294'
+      - name: lineType
+        in: query
+        required: false
+        description: Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values
+        schema:
+          type: string
+        example: fraction
+      - name: stat
+        in: query
+        required: false
+        description: The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values
+        schema:
+          type: number
+        example: '9001001001'
+      - name: modifiedAtMicroGreater
+        in: query
+        required: false
+        description: The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received
+        schema:
+          type: string
+        example: '2026-04-23 19:03:22.563660'
+      - name: milestone
+        in: query
+        required: false
+        description: Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values
+        schema:
+          type: boolean
+        example: 'true'
+      - name: wasBalanced
+        in: query
+        required: false
+        description: Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values
+        schema:
+          type: boolean
+        example: 'true'
+  /soccer/players/props/alternates/inplay:
+    get:
+      operationId: getSoccerPlayersPropsAlternatesInplay
+      summary: Soccer Players Props Alternates Inplay
+      tags:
+      - Soccer
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  abbreviation:
+                    type: string
+                    description: Provides the appropriate abbreviation for the specified team
+                  balanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either balanced (true) or unbalanced (false)
+                  count:
+                    type: number
+                    description: Provides the total count of markets returned by your request
+                  dataConfirmed:
+                    type: boolean
+                    description: Provides the value identifying the returned results as either confirmed (true) or not confirmed (false)
+                  date:
+                    type: string
+                    description: Provides the EST date(s) of the event(s) for the specified markets returned by your request
+                  endpoint:
+                    type: string
+                    description: Provides the specific endpoint used to make your request to assist in validating requests
+                  home:
+                    type: boolean
+                    description: Provides the value identifying a market as either for a player on the home team (true) or away (false)
+                  id:
+                    type: number
+                    description: Provides the appropriate ID for the specified team, market type, etc
+                  line:
+                    type: number
+                    nullable: true
+                    description: Provides the line offered for the specified markets returned by your request
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying a market as either suspended (true) or not suspended (false)
+                  mean:
+                    type: number
+                    nullable: true
+                    description: Provides the raw mean projection value for the specified markets returned by your request
+                  milestone:
+                    type: boolean
+                    description: Provides the value identifying a specified line as either a designated milestone line (true) or not a milestone line (false)
+                  modifiedAt:
+                    type: string
+                    description: Provides the UTC date-timestamp identifying when the specified market was last updated with new data
+                  modifiedAtMicro:
+                    type: string
+                    description: Provides the UTC date-timestamp in micro-second format identifying when the specified market was last updated with new data
+                  name:
+                    type: string
+                    description: Provides the name of the specified market return by your request
+                  open:
+                    type: boolean
+                    description: Provides the value identifying a market as either open (true) or not open (false)
+                  optimal:
+                    type: boolean
+                    description: Provides the value identifying a market as either optimal (true) or not optimal (false)
+                  over:
+                    type: number
+                    nullable: true
+                    description: Provides the Over outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  overSuspended:
+                    type: boolean
+                    description: Provides the value identifying the over selection/price as either suspended (true) or not suspended (false)
+                  playerId:
+                    type: number
+                    description: Provides the appropriate ID of the player to whom each market belongs as found in the /nfl/players endpoint
+                  playerName:
+                    type: string
+                    description: Provides the name of the player to whom each market belongs as found in the /nfl/players endpoint
+                  push:
+                    type: number
+                    nullable: true
+                    description: Provides the Push outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  pushSuspended:
+                    type: boolean
+                    description: Provides the value identifying the push selection/price as either suspended (true) or not suspended (false)
+                  season:
+                    type: number
+                    description: The 4-digit year of the season associated with the specified markets returned by your request. For seasons that span multiple calendar years (eg 2019-2020), the first calendar year is returned
+                  settled:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either settled (true) or not settled (false)
+                  sport:
+                    type: string
+                    description: The 3-letter abbreviation of the sport associated with the specified markets returned by your request
+                  starter:
+                    type: boolean
+                    description: Provides the value identifying a market as either for a starting player (true) or a non-starting player (false)
+                  type:
+                    type: string
+                    description: Provides the value denoting whether the specified line is a fraction or integer line
+                  under:
+                    type: number
+                    nullable: true
+                    description: Provides the Under outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  underSuspended:
+                    type: boolean
+                    description: Provides the value identifying the under selection/price as either suspended (true) or not suspended (false)
+                  value:
+                    type: number
+                    description: Provides the value to be used for resulting and settlement purposes for each market
+                  void:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either voided (true) or not voided (false)
+                  wasBalanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either having been a balance line (true) or not having been balanced line (false) at any time in the history of the specified market
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: game
+        in: query
+        required: true
+        description: The ID value of the event for which you are requesting market data. Accepts only a single value
+        schema:
+          type: number
+        example: '345294'
+      - name: lineType
+        in: query
+        required: false
+        description: Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values
+        schema:
+          type: string
+        example: fraction
+      - name: stat
+        in: query
+        required: false
+        description: The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values
+        schema:
+          type: number
+        example: '9001001001'
+      - name: modifiedAtMicroGreater
+        in: query
+        required: false
+        description: The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received
+        schema:
+          type: string
+        example: '2026-04-23 19:03:22.563660'
+      - name: milestone
+        in: query
+        required: false
+        description: Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values
+        schema:
+          type: boolean
+        example: 'true'
+      - name: wasBalanced
+        in: query
+        required: false
+        description: Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values
+        schema:
+          type: boolean
+        example: 'true'
+  /soccer/players/props/inplay:
+    get:
+      operationId: getSoccerPlayersPropsInplay
+      summary: Soccer Players Props Inplay
+      tags:
+      - Soccer
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  abbreviation:
+                    type: string
+                    description: Provides the appropriate abbreviation for the specified team
+                  activeInGame:
+                    type: number
+                    nullable: true
+                    description: Provides the value identifying the specified player as either active in-play (1) or not active in-play (0)
+                  activePreGame:
+                    type: number
+                    nullable: true
+                    description: Provides the value identifying the specified player as either active pre-match (1) or not active pre-match (0)
+                  balanced:
+                    type: boolean
+                    description: Provides the value identifying a line for the specified market as either balanced (true) or unbalanced (false)
+                  count:
+                    type: number
+                    description: Provides the total count of markets returned by your request
+                  dataConfirmed:
+                    type: boolean
+                    description: Provides the value identifying the returned results as either confirmed (true) or not confirmed (false)
+                  date:
+                    type: string
+                    description: Provides the EST date(s) of the event(s) for the specified markets returned by your request
+                  endpoint:
+                    type: string
+                    description: Provides the specific endpoint used to make your request to assist in validating requests
+                  home:
+                    type: boolean
+                    description: Provides the value identifying a market as either for a player on the home team (true) or away (false)
+                  id:
+                    type: number
+                    description: Provides the appropriate ID for the specified team, market type, etc
+                  line:
+                    type: number
+                    nullable: true
+                    description: Provides the line offered for the specified markets returned by your request
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying a market as either suspended (true) or not suspended (false)
+                  marketSuspendedDescription:
+                    type: string
+                    description: Provides the description associated with the specific type of suspension-state a gvien market is in currently
+                  marketSuspendedId:
+                    type: number
+                    description: Provides the ID value associated with the specific type of suspension-state a gvien market is in currently
+                  mean:
+                    type: number
+                    nullable: true
+                    description: Provides the raw mean projection value for the specified markets returned by your request
+                  median:
+                    type: number
+                    nullable: true
+                    description: Provides the raw median projection value for the specified markets returned by your request
+                  modifiedAt:
+                    type: string
+                    description: Provides the UTC date-timestamp identifying when the specified market was last updated with new data
+                  modifiedAtMicro:
+                    type: string
+                    description: Provides the UTC date-timestamp in micro-second format identifying when the specified market was last updated with new data
+                  name:
+                    type: string
+                    description: Provides the name of the specified market return by your request
+                  open:
+                    type: boolean
+                    description: Provides the value identifying a market as either open (true) or not open (false)
+                  optimal:
+                    type: boolean
+                    description: Provides the value identifying a market as either optimal (true) or not optimal (false)
+                  over:
+                    type: number
+                    nullable: true
+                    description: Provides the Over outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  overSuspended:
+                    type: boolean
+                    description: Provides the value identifying the over selection/price as either suspended (true) or not suspended (false)
+                  playerId:
+                    type: number
+                    description: Provides the appropriate ID of the player to whom each market belongs as found in the /nfl/players endpoint
+                  playerName:
+                    type: string
+                    description: Provides the name of the player to whom each market belongs as found in the /nfl/players endpoint
+                  push:
+                    type: number
+                    nullable: true
+                    description: Provides the Push outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  pushSuspended:
+                    type: boolean
+                    description: Provides the value identifying the push selection/price as either suspended (true) or not suspended (false)
+                  season:
+                    type: number
+                    description: The 4-digit year of the season associated with the specified markets returned by your request. For seasons that span multiple calendar years (eg 2019-2020), the first calendar year is returned
+                  settled:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either settled (true) or not settled (false)
+                  sport:
+                    type: string
+                    description: The 3-letter abbreviation of the sport associated with the specified markets returned by your request
+                  starter:
+                    type: boolean
+                    description: Provides the value identifying a market as either for a starting player (true) or a non-starting player (false)
+                  state:
+                    type: string
+                    description: Provides the regional state of origin for the specified team to be used for regulatory purposes as needed
+                  type:
+                    type: string
+                    description: Provides the value denoting whether the specified line is a fraction or integer line
+                  under:
+                    type: number
+                    nullable: true
+                    description: Provides the Under outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  underSuspended:
+                    type: boolean
+                    description: Provides the value identifying the under selection/price as either suspended (true) or not suspended (false)
+                  value:
+                    type: number
+                    description: Provides the value to be used for resulting and settlement purposes for each market
+                  void:
+                    type: boolean
+                    description: Provides the value identifying the returned result as either voided (true) or not voided (false)
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: stat
+        in: query
+        required: false
+        description: The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values
+        schema:
+          type: number
+        example: '9001001001'
+      - name: game
+        in: query
+        required: false
+        description: The ID value of the event for which you are requesting market data. Accepts only a single value
+        schema:
+          type: number
+        example: '348373'
+      - name: modifiedAtMicroGreater
+        in: query
+        required: false
+        description: The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received
+        schema:
+          type: string
+        example: '2025-11-23 18:18:06.674635'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        endpoint:
+          type: string
+        error:
+          type: object
+          properties:
+            status:
+              type: boolean
+            message:
+              type: string
+            details:
+              type: object
+        data:
+          type: object
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: ApiKey
+      description: API key issued via the Swish Analytics developer portal (docs.swishanalytics.com). Managed under the /apikeys endpoints; passed in the ApiKey request header.

@@ -1,0 +1,400 @@
+openapi: 3.1.0
+info:
+  title: Swish Analytics Sportsbook ATP Tennis Bet Request API
+  version: v1
+  description: 'Machine-learning sportsbook data API from Swish Analytics: player prop pricing, pre-match and in-play match/team markets, bet-request (single and parlay) pricing, and results across NFL, NBA, MLB, NHL, NCAA basketball & football, ATP, WTA and soccer. Derived by the API Evangelist enrichment pipeline from the provider''s live documentation service (docs-api.swishanalytics.com/v1). Content is faithful to published docs; not an authoritative provider-published OpenAPI.'
+  termsOfService: https://swishanalytics.com
+  contact:
+    name: Swish Analytics
+    url: https://docs.swishanalytics.com
+  x-apievangelist:
+    generated: '2026-07-21'
+    method: derived
+    source: 'https://docs-api.swishanalytics.com/v1 (live documentation service: /markets, /documentation/params, /documentation/response-fields)'
+    note: Faithfully derived from Swish Analytics live developer documentation; endpoint list, query parameters and response fields are provider-published. Not an authoritative provider-published OpenAPI.
+servers:
+- url: https://api.swishanalytics.com
+  description: Production
+security:
+- ApiKey: []
+tags:
+- name: Bet Request
+paths:
+  /bet-request:
+    get:
+      operationId: getBetRequest
+      summary: Bet-request
+      tags:
+      - Bet Request
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  endpoint:
+                    type: string
+                    description: Provides the specific endpoint used to make your request to assist in validating responses
+                  gameId:
+                    type: number
+                    description: Provides the appropriate ID of the event to which each market belongs
+                  id:
+                    type: number
+                    description: Provides the appropriate ID of the stat type to which each market corresponds
+                  line:
+                    type: number
+                    description: Provides the line offered for the specified markets returned by your request
+                  margin:
+                    type: number
+                    description: Provides the value expressed as a percentage in decimal form identifying the margin applied to the market provided in the response
+                  marketAdj:
+                    type: boolean
+                    description: Provides the value identifying the market provided in the response as either using market adjusted lines (true) or not using market adjusted lines (false)
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying a market as either suspended (true) or not suspended (false)
+                  over:
+                    type: number
+                    nullable: true
+                    description: Provides the Over outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  parlay:
+                    type: boolean
+                    description: Provides the value identifying the market provided in the response as either an accumulator (true) or not an accumulator (false)
+                  parlayProb:
+                    type: number
+                    nullable: true
+                    description: Provides the cumulative price expressed as a percentage in decimal form to be offered for the single market or accumulator provided in the response
+                  parlaySuspended:
+                    type: boolean
+                    nullable: true
+                    description: Provides the value identifying the accumulator provided in the response as either suspended (true) or not suspended (false)
+                  playerId:
+                    type: number
+                    description: Provides the appropriate ID of the player to whom each market belongs
+                  playerName:
+                    type: string
+                    description: Provides the name of the player to whom each market belongs
+                  prob:
+                    type: number
+                    nullable: true
+                    description: Provides the price expressed as a percentage in decimal form for the associated market & line type as specified in your initial request
+                  push:
+                    type: number
+                    nullable: true
+                    description: Provides the Push outcome price for the line attached to the specified market expressed as a percentage in decimal form
+                  sport:
+                    type: string
+                    description: The 3-letter abbreviation of the sport associated with the specified markets returned by your request
+                  status:
+                    type: boolean
+                    description: Provides the value identifying the request made as either successful (true) or not successful (false)
+                  teamId:
+                    type: number
+                    description: Provides the appropriate ID of the team for use when mapping to markets or other team-specific endpoints
+                  type:
+                    type: string
+                    nullable: true
+                    description: Provides the line type for the associated market as specified in your initial request
+                  under:
+                    type: number
+                    nullable: true
+                    description: Provides the Under outcome price for the line attached to the specified market expressed as a percentage in decimal form
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: parlay
+        in: query
+        required: true
+        description: Specifies if this is a bet request for an accumulator (true) or a single market (false)
+        schema:
+          type: boolean
+        example: 'true'
+      - name: margin
+        in: query
+        required: true
+        description: Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places
+        schema:
+          type: number
+        example: '0.05'
+      - name: marketAdj
+        in: query
+        required: true
+        description: Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines
+        schema:
+          type: boolean
+        example: 'true'
+      - name: sport
+        in: query
+        required: true
+        description: Specifies the sport associated with each leg you are requesting per props object
+        schema:
+          type: string
+        example: nba
+      - name: gameId
+        in: query
+        required: true
+        description: Specifies the unique gameId associated with each leg you are requesting per props object
+        schema:
+          type: number
+        example: '2239443'
+      - name: playerId
+        in: query
+        required: true
+        description: Specifies the unique playerId associated with each leg you are requesting per props object
+        schema:
+          type: number
+        example: '748788'
+      - name: teamId
+        in: query
+        required: true
+        description: Specifies the unique teamId associated with each leg you are requesting per props object. When requesting match-level markets that are not specifically tied to one team, teamId is still required, but either teamId from the match is allowed
+        schema:
+          type: number
+        example: '137'
+      - name: statTypeId
+        in: query
+        required: true
+        description: Specifies the unique statTypeId associated with each leg you are requesting per props object
+        schema:
+          type: number
+        example: '100'
+      - name: lineType
+        in: query
+        required: true
+        description: Specifies the selection of the bet associated with each leg you are requesting per props object
+        schema:
+          type: string
+        example: over
+      - name: line
+        in: query
+        required: true
+        description: Specifies the specific line of the bet associated with each leg you are requesting per props object
+        schema:
+          type: number
+        example: '24.5'
+      - name: ignoreNegCorrelation
+        in: query
+        required: false
+        description: Specifies whether you want your request to return a price without negative correlation adjustments (true) or with negative correlation adjustments (false). This parameter is optional; if you do not include it, each request will continue to default to stan
+        schema:
+          type: boolean
+        example: 'true'
+  /bet-request/inplay:
+    get:
+      operationId: getBetRequestInplay
+      summary: Bet-request Inplay
+      tags:
+      - Bet Request
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /bet-request/results:
+    get:
+      operationId: getBetRequestResults
+      summary: Bet-request Results
+      tags:
+      - Bet Request
+      security:
+      - ApiKey: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  gameId:
+                    type: number
+                    description: Provides the associated ID value for the game(s) as specified in your request
+                  grade:
+                    type: string
+                    nullable: true
+                    description: Provides the result for each individual market returned by your request, as well as the overall grade of the parlay when your request contains parlay=true
+                  line:
+                    type: number
+                    description: Provides the associated line-value for the market(s) as specified in your request
+                  lineType:
+                    type: string
+                    description: Provides the associated bet-type of over, under or push for the market(s) as specified in your request
+                  margin:
+                    type: number
+                    description: Provides the margin-value applied to the market(s) as specified in your request
+                  marketAdj:
+                    type: boolean
+                    description: Provides the value identifying the requested results as either using market-adjusted lines ( true ) or not using market-adjusted lines ( false )
+                  marketSuspended:
+                    type: boolean
+                    description: Provides the value identifying the individual market(s) provided in the response as either suspended ( true ) or not suspended ( false )
+                  parlay:
+                    type: boolean
+                    description: Provides the value identifying the requested results as either for a parlay ( true ) or not for a parlay ( false )
+                  parlaySuspended:
+                    type: boolean
+                    nullable: true
+                    description: Provides the value identifying the requested parlay returned as either suspended ( true ) or not suspended ( false )
+                  playerId:
+                    type: number
+                    nullable: true
+                    description: Provides the associated ID value for the player(s) as specified in your request
+                  sport:
+                    type: string
+                    description: Provides the 3-letter abbreviation of the sport for which you are requesting results
+                  statTypeId:
+                    type: number
+                    description: Provides the associated ID value for the stat(s) as specified in your request
+                  status:
+                    type: boolean
+                    description: Provides the value identifying the result(s) returned as either valid ( true ) or not valid ( false )
+                  teamId:
+                    type: number
+                    nullable: true
+                    description: Provides the associated ID value for the team(s) as specified in your request
+        '401':
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: parlay
+        in: query
+        required: true
+        description: Specifies if this is a bet request for an accumulator (true) or a single market (false)
+        schema:
+          type: boolean
+        example: 'true'
+      - name: margin
+        in: query
+        required: true
+        description: Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places
+        schema:
+          type: number
+        example: '0.05'
+      - name: marketAdj
+        in: query
+        required: true
+        description: Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines
+        schema:
+          type: boolean
+        example: 'true'
+      - name: sport
+        in: query
+        required: true
+        description: Specifies the sport associated with each leg you are requesting per props object
+        schema:
+          type: string
+        example: nba
+      - name: gameId
+        in: query
+        required: true
+        description: Specifies the unique gameId associated with each leg you are requesting per props object
+        schema:
+          type: number
+        example: '2239443'
+      - name: playerId
+        in: query
+        required: true
+        description: Specifies the unique playerId associated with each leg you are requesting per props object
+        schema:
+          type: number
+        example: '748788'
+      - name: teamId
+        in: query
+        required: true
+        description: Specifies the unique teamId associated with each leg you are requesting per props object. When requesting match-level markets that are not specifically tied to one team, teamId is still required, but either teamId from the match is allowed
+        schema:
+          type: number
+        example: '137'
+      - name: statTypeId
+        in: query
+        required: true
+        description: Specifies the unique statTypeId associated with each leg you are requesting per props object
+        schema:
+          type: number
+        example: '100'
+      - name: lineType
+        in: query
+        required: true
+        description: Specifies the selection of the bet associated with each leg you are requesting per props object
+        schema:
+          type: string
+        example: over
+      - name: line
+        in: query
+        required: true
+        description: Specifies the specific line of the bet associated with each leg you are requesting per props object
+        schema:
+          type: number
+        example: '24.5'
+      - name: type
+        in: query
+        required: false
+        description: 'Specific to Soccer, this parameter notates the type of resulting you are requesting as it pertains to whether or not a player started the match or substituted. For example: passing prematch would void markets for players that did not start the match, whereas passing inplay would not void if a player does not start the match if they enter the game as a substitute.'
+        schema:
+          type: string
+        example: inplay
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        endpoint:
+          type: string
+        error:
+          type: object
+          properties:
+            status:
+              type: boolean
+            message:
+              type: string
+            details:
+              type: object
+        data:
+          type: object
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: ApiKey
+      description: API key issued via the Swish Analytics developer portal (docs.swishanalytics.com). Managed under the /apikeys endpoints; passed in the ApiKey request header.
