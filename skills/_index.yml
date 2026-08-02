@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: generated
+skills:
+- file: swish-analytics-price-a-bet.md
+  name: Price a bet or parlay with Swish Analytics
+  api: openapi/swish-analytics-sportsbook-openapi.yml
+  operations:
+  - getBetRequest
+  - getBetRequestResults
+- file: swish-analytics-live-player-props.md
+  name: Poll live player props from Swish Analytics
+  api: openapi/swish-analytics-sportsbook-openapi.yml
+  operations:
+  - getNflPlayersPropsInplay
+  - getNbaPlayersPropsInplay
+  - getMlbPlayersPropsInplay
+- file: swish-analytics-prematch-markets.md
+  name: Load pre-match match/team markets from Swish Analytics
+  api: openapi/swish-analytics-sportsbook-openapi.yml
+  operations:
+  - getMlbMatchesMarketsPrematch
+  - getNflMatchesMarketsPrematch

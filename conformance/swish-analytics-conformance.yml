@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/swish-analytics-sportsbook-openapi.yml
+standards:
+- id: apikey-auth
+  conforms: true
+  evidence: securityScheme type apiKey in header (ApiKey)
+- id: oauth2
+  conforms: false
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: uses a custom JSON error envelope, not application/problem+json
+- id: json-api
+  conforms: false
+- id: rest-json
+  conforms: true
+  evidence: JSON over HTTPS, resource-oriented GET endpoints
+- id: idempotency
+  conforms: true
+  evidence: read-only GET surface is inherently idempotent

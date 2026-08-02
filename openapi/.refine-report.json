@@ -1,0 +1,32 @@
+{
+  "provider": "swish-analytics",
+  "sources": [
+    "swish-analytics-atp-tennis-api-openapi.yml",
+    "swish-analytics-bet-request-api-openapi.yml",
+    "swish-analytics-mlb-api-openapi.yml",
+    "swish-analytics-nba-api-openapi.yml",
+    "swish-analytics-ncaa-basketball-api-openapi.yml",
+    "swish-analytics-ncaa-football-api-openapi.yml",
+    "swish-analytics-nfl-api-openapi.yml",
+    "swish-analytics-nhl-api-openapi.yml",
+    "swish-analytics-soccer-api-openapi.yml",
+    "swish-analytics-wta-tennis-api-openapi.yml"
+  ],
+  "outputs": [
+    "swish-analytics-atp-tennis-api-openapi.yml",
+    "swish-analytics-bet-request-api-openapi.yml",
+    "swish-analytics-mlb-api-openapi.yml",
+    "swish-analytics-nba-api-openapi.yml",
+    "swish-analytics-ncaa-basketball-api-openapi.yml",
+    "swish-analytics-ncaa-football-api-openapi.yml",
+    "swish-analytics-nfl-api-openapi.yml",
+    "swish-analytics-nhl-api-openapi.yml",
+    "swish-analytics-soccer-api-openapi.yml",
+    "swish-analytics-wta-tennis-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.swishanalytics.com + host probes
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://docs.swishanalytics.com
+deprecation:
+  policy_url: null
+  sunset_header: null
+  notes: No public deprecation/Sunset policy located.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_notes: No public status page found (status.swishanalytics.com does not resolve).
+deprecated_operations: []

@@ -1,0 +1,76 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs-api.swishanalytics.com/v1/reference/groups
+description: Swish Analytics published reference / enumeration groups used across the sportsbook API responses
+  (id -> label lookups).
+groups:
+- name: marketOpenId
+  sports: mlb
+- name: atBatOutcomeId
+  sports: mlb
+- name: gameStatusId
+  sports: nfl,nba,mlb,cbb,cfb
+- name: gameStatusId
+  sports: nhl
+- name: gameTypeId
+  sports: mlb
+- name: gameTypeId
+  sports: nfl,nba,mlb,cbb,cfb
+- name: gameTypeId
+  sports: nba
+- name: gameTypeId
+  sports: nfl
+- name: isWin
+  sports: nfl,nba,mlb,nhl
+- name: lineTypeId
+  sports: nfl,nba,mlb,nhl,
+- name: sportId
+  sports: nfl,nba,mlb,nhl
+- name: divisionId
+  sports: mlb
+- name: groupId
+  sports: mlb
+- name: leagueId
+  sports: mlb
+- name: position
+  sports: mlb
+- name: conferenceId
+  sports: nba
+- name: divisionId
+  sports: nba
+- name: groupId
+  sports: nba,cbb
+- name: position
+  sports: nba,cbb
+- name: conferenceId
+  sports: nfl
+- name: divisionId
+  sports: nfl
+- name: groupId
+  sports: nfl
+- name: position
+  sports: nfl
+- name: position
+  sports: nfl,cfb
+- name: conferenceId
+  sports: nhl
+- name: divisionId
+  sports: nhl
+- name: groupId
+  sports: nhl
+- name: position
+  sports: nhl
+- name: conferenceId
+  sports: cbb
+- name: conferenceId
+  sports: cfb
+- name: matchFinishId
+  sports: atp
+- name: marketSuspendedId
+  sports: nba
+- name: gameStatusId
+  sports: atp
+- name: gameStatusId
+  sports: wta
+- name: gameStatusId
+  sports: soccer

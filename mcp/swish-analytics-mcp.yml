@@ -1,0 +1,207 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/swish-analytics-sportsbook-openapi.yml
+note: No official hosted MCP server found. Candidate tool list derived one-per-GET-operation.
+server:
+  name: swish-analytics
+  transport: stdio
+tools:
+- name: getNflMatchesMarketsPrematch
+  description: Nfl Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflMatchesMarketsPrematch
+- name: getAtpMatchesMarketsPrematch
+  description: Atp Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getAtpMatchesMarketsPrematch
+- name: getAtpPlayersProps
+  description: Atp Players Props
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getAtpPlayersProps
+- name: getAtpPlayersPropsInplay
+  description: Atp Players Props Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getAtpPlayersPropsInplay
+- name: getBetRequest
+  description: Bet-request
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getBetRequest
+- name: getBetRequestInplay
+  description: Bet-request Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getBetRequestInplay
+- name: getBetRequestResults
+  description: Bet-request Results
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getBetRequestResults
+- name: getCbbMatchesMarketsPrematch
+  description: Cbb Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCbbMatchesMarketsPrematch
+- name: getCbbMatchesMarketsPrematchAlternates
+  description: Cbb Matches Markets Prematch Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCbbMatchesMarketsPrematchAlternates
+- name: getCbbPlayersProps
+  description: Cbb Players Props
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCbbPlayersProps
+- name: getCbbPlayersPropsAlternates
+  description: Cbb Players Props Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCbbPlayersPropsAlternates
+- name: getCfbMatchesMarketsInplay
+  description: Cfb Matches Markets Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCfbMatchesMarketsInplay
+- name: getCfbMatchesMarketsPrematch
+  description: Cfb Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCfbMatchesMarketsPrematch
+- name: getCfbMatchesMarketsPrematchAlternates
+  description: Cfb Matches Markets Prematch Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCfbMatchesMarketsPrematchAlternates
+- name: getCfbPlayersProps
+  description: Cfb Players Props
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCfbPlayersProps
+- name: getCfbPlayersPropsAlternates
+  description: Cfb Players Props Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCfbPlayersPropsAlternates
+- name: getCfbPlayersPropsInplay
+  description: Cfb Players Props Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getCfbPlayersPropsInplay
+- name: getMlbBetRequest
+  description: Mlb Bet-request
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbBetRequest
+- name: getMlbBetRequestResults
+  description: Mlb Bet-request Results
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbBetRequestResults
+- name: getMlbMatchesMarketsInplay
+  description: Mlb Matches Markets Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbMatchesMarketsInplay
+- name: getMlbMatchesMarketsInplayAlternates
+  description: Mlb Matches Markets Inplay Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbMatchesMarketsInplayAlternates
+- name: getMlbMatchesMarketsPrematch
+  description: Mlb Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbMatchesMarketsPrematch
+- name: getMlbMatchesMarketsPrematchAlternates
+  description: Mlb Matches Markets Prematch Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbMatchesMarketsPrematchAlternates
+- name: getMlbPlayersProps
+  description: Mlb Players Props
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbPlayersProps
+- name: getMlbPlayersPropsAlternates
+  description: Mlb Players Props Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbPlayersPropsAlternates
+- name: getMlbPlayersPropsAlternatesInplay
+  description: Mlb Players Props Alternates Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbPlayersPropsAlternatesInplay
+- name: getMlbPlayersPropsHistorical
+  description: Mlb Players Props Historical
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbPlayersPropsHistorical
+- name: getMlbPlayersPropsInplay
+  description: Mlb Players Props Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbPlayersPropsInplay
+- name: getMlbPlayersPropsInplayCumulative
+  description: Mlb Players Props Inplay Cumulative
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getMlbPlayersPropsInplayCumulative
+- name: getNbaBetRequest
+  description: Nba Bet-request
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaBetRequest
+- name: getNbaBetRequestResults
+  description: Nba Bet-request Results
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaBetRequestResults
+- name: getNbaMatchesMarketsInplay
+  description: Nba Matches Markets Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaMatchesMarketsInplay
+- name: getNbaMatchesMarketsPrematch
+  description: Nba Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaMatchesMarketsPrematch
+- name: getNbaMatchesMarketsPrematchAlternates
+  description: Nba Matches Markets Prematch Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaMatchesMarketsPrematchAlternates
+- name: getNbaPlayersPropsAlternates
+  description: Nba Players Props Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaPlayersPropsAlternates
+- name: getNbaPlayersPropsAlternatesInplay
+  description: Nba Players Props Alternates Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaPlayersPropsAlternatesInplay
+- name: getNbaPlayersPropsInplay
+  description: Nba Players Props Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaPlayersPropsInplay
+- name: getNbaPlayersPropsMarketAdjusted
+  description: Nba Players Props Market Adjusted
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaPlayersPropsMarketAdjusted
+- name: getNbaPlayersPropsMarketAdjustedHistorical
+  description: Nba Players Props Market Adjusted Historical
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNbaPlayersPropsMarketAdjustedHistorical
+- name: getNflBetRequest
+  description: Nfl Bet-request
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflBetRequest
+- name: getNflBetRequestResults
+  description: Nfl Bet-request Results
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflBetRequestResults
+- name: getNflMatchesMarketsInplay
+  description: Nfl Matches Markets Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflMatchesMarketsInplay
+- name: getNflMatchesMarketsInplayAlternates
+  description: Nfl Matches Markets Inplay Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflMatchesMarketsInplayAlternates
+- name: getNflMatchesMarketsPrematch
+  description: Nfl Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflMatchesMarketsPrematch
+- name: getNflMatchesMarketsPrematchAlternates
+  description: Nfl Matches Markets Prematch Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflMatchesMarketsPrematchAlternates
+- name: getNflPlayersPropsAlternates
+  description: Nfl Players Props Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflPlayersPropsAlternates
+- name: getNflPlayersPropsAlternatesInplay
+  description: Nfl Players Props Alternates Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflPlayersPropsAlternatesInplay
+- name: getNflPlayersPropsHistorical
+  description: Nfl Players Props Historical
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflPlayersPropsHistorical
+- name: getNflPlayersPropsInplay
+  description: Nfl Players Props Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflPlayersPropsInplay
+- name: getNflPlayersPropsMarketAdjusted
+  description: Nfl Players Props Market Adjusted
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNflPlayersPropsMarketAdjusted
+- name: getNhlBetRequest
+  description: Nhl Bet-request
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNhlBetRequest
+- name: getNhlBetRequestResults
+  description: Nhl Bet-request Results
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNhlBetRequestResults
+- name: getNhlMatchesMarketsPrematch
+  description: Nhl Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNhlMatchesMarketsPrematch
+- name: getNhlPlayersPropsInplay
+  description: Nhl Players Props Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNhlPlayersPropsInplay
+- name: getNhlPlayersPropsMarketAdjusted
+  description: Nhl Players Props Market Adjusted
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getNhlPlayersPropsMarketAdjusted
+- name: getSoccerMatchesMarketsInplay
+  description: Soccer Matches Markets Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getSoccerMatchesMarketsInplay
+- name: getSoccerMatchesMarketsInplayAlternates
+  description: Soccer Matches Markets Inplay Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getSoccerMatchesMarketsInplayAlternates
+- name: getSoccerMatchesMarketsPrematch
+  description: Soccer Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getSoccerMatchesMarketsPrematch
+- name: getSoccerMatchesMarketsPrematchAlternates
+  description: Soccer Matches Markets Prematch Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getSoccerMatchesMarketsPrematchAlternates
+- name: getSoccerPlayersProps
+  description: Soccer Players Props
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getSoccerPlayersProps
+- name: getSoccerPlayersPropsAlternates
+  description: Soccer Players Props Alternates
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getSoccerPlayersPropsAlternates
+- name: getSoccerPlayersPropsAlternatesInplay
+  description: Soccer Players Props Alternates Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getSoccerPlayersPropsAlternatesInplay
+- name: getSoccerPlayersPropsInplay
+  description: Soccer Players Props Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getSoccerPlayersPropsInplay
+- name: getWtaMatchesMarketsPrematch
+  description: Wta Matches Markets Prematch
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getWtaMatchesMarketsPrematch
+- name: getWtaPlayersProps
+  description: Wta Players Props
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getWtaPlayersProps
+- name: getWtaPlayersPropsInplay
+  description: Wta Players Props Inplay
+  source_operation: openapi/swish-analytics-sportsbook-openapi.yml#getWtaPlayersPropsInplay

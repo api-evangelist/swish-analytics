@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/swish-analytics-sportsbook-openapi.yml + live API error responses (docs-api.swishanalytics.com)
+format: custom-envelope
+note: Swish Analytics does NOT use RFC 9457 application/problem+json. Errors are returned in a custom
+  JSON envelope on every response.
+envelope:
+  status: boolean — overall request success flag (false on error)
+  endpoint: string — the request path echoed back
+  error:
+    status: boolean — true when an error occurred
+    message: string — human-readable error message
+    details: object — structured error context
+  data: object — the result payload (status:false on error)
+problems:
+- status: 400
+  title: Bad request
+  description: A required property/parameter is missing or malformed. error.message names the property
+    (e.g. "The property key is required.", "ep requested is too short.").
+  envelope_field: error.message
+- status: 401
+  title: Missing or invalid API key
+  description: The ApiKey request header is absent, deactivated, or not authorized for the requested route.
+  envelope_field: error
+- status: 404
+  title: Route not found
+  description: 'The requested route does not exist. Body: {"name":"NotFoundError","msg":"This route does
+    not exist."}'
+  envelope_field: msg

@@ -1,0 +1,17 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Swish Analytics Sportsbook API
+  version: 1.0.0
+extends: openapi/swish-analytics-sportsbook-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-rating: 3
+    x-apievangelist-notes: Derived from Swish Analytics live documentation service. Read-only sportsbook
+      data API; ApiKey header auth; custom (non-RFC9457) error envelope; incremental sync via modifiedAtGreater.
+- target: $.components.securitySchemes.ApiKey
+  update:
+    x-managed-endpoints:
+    - /apikeys
+    - /apikeys/create
+    - /apikeys/deactivate

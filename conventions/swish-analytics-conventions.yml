@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.swishanalytics.com + docs-api.swishanalytics.com/v1 (live documentation) + openapi/
+authentication:
+  style: api-key
+  header: ApiKey
+  notes: Key issued and managed via the developer portal; /apikeys, /apikeys/create, /apikeys/deactivate
+    manage keys. Key tiers observed (e.g. read-only, developer, test).
+  ref: authentication/swish-analytics-authentication.yml
+idempotency:
+  supported: false
+  notes: Read-only data API — all documented operations are HTTP GET, so idempotency keys do not apply.
+multi_value_params:
+  supported: true
+  notes: Most query filters (date, game, player, market) accept multiple values to batch-request several
+    events/markets in one call; params document a minRequired count.
+delta_sync:
+  supported: true
+  param: modifiedAtGreater
+  notes: Pass the max modifiedAt (UTC microseconds) from the most recent payload to fetch only markets
+    updated at/after that timestamp — the incremental polling pattern for live data.
+pagination:
+  style: none-documented
+  notes: Results are scoped by query filters (date/game/market) rather than paged.
+versioning:
+  scheme: uri-path
+  current: v1
+  notes: Documentation service is served under /v1; the production data API is versioned at api.swishanalytics.com.
+error_envelope:
+  ref: errors/swish-analytics-problem-types.yml
+  shape: '{status, endpoint, error:{status,message,details}, data}'
+formats:
+  response: application/json
+  dates: EST calendar dates as YYYY-MM-DD; timestamps as UTC microseconds (modifiedAt)

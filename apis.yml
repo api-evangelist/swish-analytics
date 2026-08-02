@@ -1,8 +1,15 @@
 aid: swish-analytics
 name: Swish Analytics
-description: Swish Analytics is a company surfaced as a portfolio company of bullpen-capital and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Swish Analytics is a machine-learning sports analytics company that prices and
+  originates sportsbook markets. Its B2B API delivers hyper-accurate player-prop
+  pricing, pre-match and in-play match/team markets, single and parlay (accumulator)
+  bet-request pricing, and market results across NFL, NBA, MLB, NHL, NCAA basketball
+  and football, ATP and WTA tennis, and soccer. The read-only JSON API is authenticated
+  with an ApiKey header, supports multi-value filtering and incremental delta sync via
+  a modifiedAtGreater timestamp, and is documented at docs.swishanalytics.com. Swish
+  positions itself as a global leader in player-props pricing and odds origination,
+  risk-management and trading software for U.S. sportsbooks.
 url: https://raw.githubusercontent.com/api-evangelist/swish-analytics/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,17 +17,182 @@ x-backed-by:
 - bullpen-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://swish-assets.s3-us-west-2.amazonaws.com/imgs/spawn/api-logo-2023-full-black.png
 tags:
 - Company
-apis: []
+- Sports
+- Sports Betting
+- Sportsbook
+- Analytics
+- Machine Learning
+- Odds
+- Player Props
+- Data
+- Predictions
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: swish-analytics:swish-analytics-atp-tennis-api
+  name: Swish Analytics ATP Tennis API
+  description: The ATP Tennis API from Swish Analytics — 3 operation(s) for atp tennis.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - ATP Tennis
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-atp-tennis-api-openapi.yml
+- aid: swish-analytics:swish-analytics-bet-request-api
+  name: Swish Analytics Bet Request API
+  description: The Bet Request API from Swish Analytics — 3 operation(s) for bet request.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - Bet Request
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-bet-request-api-openapi.yml
+- aid: swish-analytics:swish-analytics-mlb-api
+  name: Swish Analytics MLB API
+  description: The MLB API from Swish Analytics — 12 operation(s) for mlb.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - MLB
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-mlb-api-openapi.yml
+- aid: swish-analytics:swish-analytics-nba-api
+  name: Swish Analytics NBA API
+  description: The NBA API from Swish Analytics — 10 operation(s) for nba.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - NBA
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-nba-api-openapi.yml
+- aid: swish-analytics:swish-analytics-ncaa-basketball-api
+  name: Swish Analytics NCAA Basketball API
+  description: The NCAA Basketball API from Swish Analytics — 4 operation(s) for ncaa basketball.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - NCAA Basketball
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-ncaa-basketball-api-openapi.yml
+- aid: swish-analytics:swish-analytics-ncaa-football-api
+  name: Swish Analytics NCAA Football API
+  description: The NCAA Football API from Swish Analytics — 6 operation(s) for ncaa football.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - NCAA Football
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-ncaa-football-api-openapi.yml
+- aid: swish-analytics:swish-analytics-nfl-api
+  name: Swish Analytics NFL API
+  description: The NFL API from Swish Analytics — 12 operation(s) for nfl.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - NFL
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-nfl-api-openapi.yml
+- aid: swish-analytics:swish-analytics-nhl-api
+  name: Swish Analytics NHL API
+  description: The NHL API from Swish Analytics — 5 operation(s) for nhl.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - NHL
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-nhl-api-openapi.yml
+- aid: swish-analytics:swish-analytics-soccer-api
+  name: Swish Analytics Soccer API
+  description: The Soccer API from Swish Analytics — 8 operation(s) for soccer.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - Soccer
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-soccer-api-openapi.yml
+- aid: swish-analytics:swish-analytics-wta-tennis-api
+  name: Swish Analytics WTA Tennis API
+  description: The WTA Tennis API from Swish Analytics — 3 operation(s) for wta tennis.
+  humanURL: https://docs.swishanalytics.com
+  baseURL: https://api.swishanalytics.com
+  tags:
+  - WTA Tennis
+  properties:
+  - type: OpenAPI
+    url: openapi/swish-analytics-wta-tennis-api-openapi.yml
 common:
+- type: DomainSecurity
+  url: security/swish-analytics-domain-security.yml
+- type: Authentication
+  url: authentication/swish-analytics-authentication.yml
+- type: Conventions
+  url: conventions/swish-analytics-conventions.yml
+- type: ErrorCatalog
+  url: errors/swish-analytics-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/swish-analytics-lifecycle.yml
+- type: Conformance
+  url: conformance/swish-analytics-conformance.yml
+- type: MCPServer
+  url: mcp/swish-analytics-mcp.yml
+- type: DataModel
+  url: data-model/swish-analytics-data-model.yml
+- type: Vocabulary
+  url: vocabulary/swish-analytics-reference.yml
+- type: WellKnown
+  url: well-known/swish-analytics-well-known.yml
+- type: LLMsTxt
+  url: llms/swish-analytics-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DeveloperPortal
+  url: https://docs.swishanalytics.com
+- type: Documentation
+  url: https://docs.swishanalytics.com
+- type: APIReference
+  url: https://docs.swishanalytics.com/reference
+- type: GettingStarted
+  url: https://docs.swishanalytics.com/guides
+- type: Support
+  url: https://docs.swishanalytics.com/faq
+- type: SignUp
+  url: https://docs.swishanalytics.com/signup
+- type: GitHubOrganization
+  url: https://github.com/SwishAnalytics
 - type: Website
   url: https://swishanalytics.com
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 16
+  pass: local-v1

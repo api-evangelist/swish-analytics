@@ -1,0 +1,26 @@
+# Swish Analytics Sportsbook API
+
+> Machine-learning sportsbook data API from Swish Analytics: player-prop pricing, pre-match and in-play match/team markets, bet-request (single and parlay) pricing, and results across NFL, NBA, MLB, NHL, NCAA basketball & football, ATP, WTA and soccer. Read-only JSON over HTTPS, authenticated with an ApiKey header.
+
+Base URL: https://api.swishanalytics.com  |  Auth: `ApiKey` request header  |  Docs: https://docs.swishanalytics.com
+
+## Docs
+- [Developer portal & documentation](https://docs.swishanalytics.com)
+- [Company site](https://swishanalytics.com)
+- [GitHub organization](https://github.com/SwishAnalytics)
+
+## Specs & Artifacts
+- [OpenAPI (derived, 66 operations)](openapi/swish-analytics-sportsbook-openapi.yml)
+- [Authentication profile](authentication/swish-analytics-authentication.yml)
+- [API conventions](conventions/swish-analytics-conventions.yml)
+- [Error envelope](errors/swish-analytics-problem-types.yml)
+- [Reference / enumeration groups](vocabulary/swish-analytics-reference.yml)
+- [Data model](data-model/swish-analytics-data-model.yml)
+- [Candidate MCP tools](mcp/swish-analytics-mcp.yml)
+
+## Key operations
+- `GET /bet-request` — Bet-request (operationId: getBetRequest)
+- `GET /nfl/players/props/inplay` — Nfl Players Props Inplay (operationId: getNflPlayersPropsInplay)
+- `GET /mlb/matches/markets/prematch` — Mlb Matches Markets Prematch (operationId: getMlbMatchesMarketsPrematch)
+- `GET /nba/players/props/inplay` — Nba Players Props Inplay (operationId: getNbaPlayersPropsInplay)
+- `GET /bet-request/results` — Bet-request Results (operationId: getBetRequestResults)

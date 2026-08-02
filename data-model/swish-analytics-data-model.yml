@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/swish-analytics-sportsbook-openapi.yml + docs-api reference groups
+entities:
+- name: Sport
+  description: One of NFL, NBA, MLB, NHL, NCAA basketball/football, ATP, WTA, soccer
+  id_field: sportId
+- name: League
+  id_field: leagueId
+- name: Match
+  description: A scheduled game/event
+  id_field: game
+  relationships:
+  - type: belongs_to
+    target: Sport
+    via: sportId
+  - type: has_many
+    target: Market
+    via: game
+- name: Player
+  id_field: player
+  relationships:
+  - type: has_many
+    target: PlayerProp
+    via: player
+- name: Market
+  description: A pre-match or in-play match/team betting market
+  id_field: marketOpenId
+  relationships:
+  - type: belongs_to
+    target: Match
+    via: game
+- name: PlayerProp
+  description: A player proposition market and its priced line(s)
+  id_field: statTypeId
+  relationships:
+  - type: belongs_to
+    target: Match
+    via: game
+  - type: belongs_to
+    target: Player
+    via: player
+- name: BetRequest
+  description: A single-market or parlay (accumulator) price request
+  relationships:
+  - type: has_many
+    target: Market
+    via: legs

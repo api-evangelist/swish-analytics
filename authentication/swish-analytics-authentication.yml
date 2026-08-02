@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/swish-analytics-sportsbook-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKey
+  type: apiKey
+  in: header
+  parameter: ApiKey
+  description: API key issued via the Swish Analytics developer portal (docs.swishanalytics.com).
+    Managed under the /apikeys endpoints; passed in the ApiKey request header.
+  sources:
+  - openapi/swish-analytics-sportsbook-openapi.yml
