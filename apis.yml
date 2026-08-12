@@ -151,6 +151,8 @@ apis:
   - type: OpenAPI
     url: openapi/swish-analytics-wta-tennis-api-openapi.yml
 common:
+- type: Overlay
+  url: overlays/swish-analytics-sportsbook-overlay.yaml
 - type: DomainSecurity
   url: security/swish-analytics-domain-security.yml
 - type: Authentication
