@@ -1,0 +1,191 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swish Analytics Sportsbook ATP Tennis API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "ApiKey",
+      "value": "{{ApiKey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ATP Tennis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Atp Matches Markets Prematch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/atp/matches/markets/prematch",
+            "params": [
+              {
+                "name": "game",
+                "value": "394580",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting market data."
+              },
+              {
+                "name": "date",
+                "value": "2020-01-15",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting market data in YYYY-MM-DD format."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2026-06-15 12:22:38.558000",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              },
+              {
+                "name": "stat",
+                "value": "7703001004",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "duration",
+                "value": "match",
+                "type": "query",
+                "description": "Can be used to specifically request data for those markets that are at the match-level ( match ) or the set-level ( set ). Please note that this parameter is optional and you do not need to utilize it if you desire all available markets."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Atp Matches Markets Prematch"
+        },
+        {
+          "info": {
+            "name": "Atp Players Props",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/atp/players/props",
+            "params": [
+              {
+                "name": "game",
+                "value": "306813",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "stat",
+                "value": "700",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2023-08-10 13:57:09.433966",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "duration",
+                "value": "match",
+                "type": "query",
+                "description": "Can be used to specifically request data for those markets that are at the match-level ( match ) or the set-level ( set ). Please note that this parameter is optional and you do not need to utilize it if you desire all available markets"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Atp Players Props"
+        },
+        {
+          "info": {
+            "name": "Atp Players Props Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/atp/players/props/inplay",
+            "params": [
+              {
+                "name": "game",
+                "value": "306813",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "stat",
+                "value": "700",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2023-08-10 13:57:09.433966",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "duration",
+                "value": "match",
+                "type": "query",
+                "description": "Can be used to specifically request data for those markets that are at the match-level ( match ), the set-level ( set ) or the game-level ( game ). Please note that this parameter is optional and you do not need to utilize"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Atp Players Props Inplay"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

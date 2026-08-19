@@ -1,0 +1,967 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swish Analytics Sportsbook ATP Tennis MLB API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "ApiKey",
+      "value": "{{ApiKey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MLB",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Mlb Bet-request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/bet-request",
+            "params": [
+              {
+                "name": "parlay",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+              },
+              {
+                "name": "margin",
+                "value": "0.05",
+                "type": "query",
+                "description": "Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+              },
+              {
+                "name": "marketAdj",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+              },
+              {
+                "name": "sport",
+                "value": "mlb",
+                "type": "query",
+                "description": "Provides the appropriate 3-letter abbreviation of the sport for which you are requesting data"
+              },
+              {
+                "name": "playerId",
+                "value": "477132",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "gameId",
+                "value": "635887",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "statTypeId",
+                "value": "300",
+                "type": "query",
+                "description": "The ID value of the stat-type for which you are requesting a market. This property accepts a single value per object"
+              },
+              {
+                "name": "line",
+                "value": "7",
+                "type": "query",
+                "description": "The specific line value for which you are requesting pricing. This property accepts a single value per object"
+              },
+              {
+                "name": "lineType",
+                "value": "over",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Bet-request"
+        },
+        {
+          "info": {
+            "name": "Mlb Bet-request Results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/bet-request/results",
+            "params": [
+              {
+                "name": "parlay",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+              },
+              {
+                "name": "margin",
+                "value": "0.05",
+                "type": "query",
+                "description": "Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+              },
+              {
+                "name": "marketAdj",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+              },
+              {
+                "name": "sport",
+                "value": "mlb",
+                "type": "query",
+                "description": "Provides the appropriate 3-letter abbreviation of the sport for which you are requesting data"
+              },
+              {
+                "name": "playerId",
+                "value": "477132",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "gameId",
+                "value": "635887",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "statTypeId",
+                "value": "300",
+                "type": "query",
+                "description": "The ID value of the stat-type for which you are requesting a market. This property accepts a single value per object"
+              },
+              {
+                "name": "line",
+                "value": "7",
+                "type": "query",
+                "description": "The specific line value for which you are requesting pricing. This property accepts a single value per object"
+              },
+              {
+                "name": "lineType",
+                "value": "over",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Bet-request Results"
+        },
+        {
+          "info": {
+            "name": "Mlb Matches Markets Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/matches/markets/inplay",
+            "params": [
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "stat",
+                "value": "300",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "team",
+                "value": "147",
+                "type": "query",
+                "description": "The ID value(s) of the team(s) for which you are requesting markets."
+              },
+              {
+                "name": "opponent",
+                "value": "111",
+                "type": "query",
+                "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+              },
+              {
+                "name": "game",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "gameId",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "date",
+                "value": "2019-08-12",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Matches Markets Inplay"
+        },
+        {
+          "info": {
+            "name": "Mlb Matches Markets Inplay Alternates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/matches/markets/inplay/alternates",
+            "params": [
+              {
+                "name": "game",
+                "value": "823524",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "stat",
+                "value": "335",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              },
+              {
+                "name": "wasBalanced",
+                "value": "false",
+                "type": "query",
+                "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2026-07-12 20:30:25.335110",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Matches Markets Inplay Alternates"
+        },
+        {
+          "info": {
+            "name": "Mlb Matches Markets Prematch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/matches/markets/prematch",
+            "params": [
+              {
+                "name": "date",
+                "value": "2019-08-12",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "gameId",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "team",
+                "value": "147",
+                "type": "query",
+                "description": "The ID value(s) of the team(s) for which you are requesting markets."
+              },
+              {
+                "name": "opponent",
+                "value": "111",
+                "type": "query",
+                "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+              },
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "stat",
+                "value": "350",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "game",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Matches Markets Prematch"
+        },
+        {
+          "info": {
+            "name": "Mlb Matches Markets Prematch Alternates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/matches/markets/prematch/alternates",
+            "params": [
+              {
+                "name": "game",
+                "value": "777878",
+                "type": "query",
+                "description": "The ID value of the event for which you are requesting schedule data."
+              },
+              {
+                "name": "stat",
+                "value": "305",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values."
+              },
+              {
+                "name": "wasBalanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2025-05-18 22:016:13.086136",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Matches Markets Prematch Alternates"
+        },
+        {
+          "info": {
+            "name": "Mlb Players Props",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/players/props",
+            "params": [
+              {
+                "name": "date",
+                "value": "2019-08-12",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "game",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "stat",
+                "value": "300",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Players Props"
+        },
+        {
+          "info": {
+            "name": "Mlb Players Props Alternates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/players/props/alternates",
+            "params": [
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "starter",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets for players classified as either starters (true) or non-starters (false)"
+              },
+              {
+                "name": "player",
+                "value": "605141",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "opponent",
+                "value": "111",
+                "type": "query",
+                "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+              },
+              {
+                "name": "stat",
+                "value": "300",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "team",
+                "value": "147",
+                "type": "query",
+                "description": "The ID value(s) of the team(s) for which you are requesting markets."
+              },
+              {
+                "name": "game",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "gameId",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "date",
+                "value": "2019-08-12",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "wasBalanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false)"
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Players Props Alternates"
+        },
+        {
+          "info": {
+            "name": "Mlb Players Props Alternates Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/players/props/alternates/inplay",
+            "params": [
+              {
+                "name": "game",
+                "value": "744866",
+                "type": "query",
+                "description": "The ID value of the event for which you are requesting market data. Accepts only a single value"
+              },
+              {
+                "name": "stat",
+                "value": "300",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values"
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              },
+              {
+                "name": "wasBalanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values"
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2024-04-01 17:40:55.188372",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Players Props Alternates Inplay"
+        },
+        {
+          "info": {
+            "name": "Mlb Players Props Historical",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/players/props/historical",
+            "params": [
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "starter",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets for players classified as either starters (true) or non-starters (false)"
+              },
+              {
+                "name": "positionAbbr",
+                "value": "SS",
+                "type": "query",
+                "description": "The common abbreviation for a specified position."
+              },
+              {
+                "name": "stat",
+                "value": "300",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "position",
+                "value": "SS",
+                "type": "query",
+                "description": "The common abbreviation for a specified position."
+              },
+              {
+                "name": "opponent",
+                "value": "111",
+                "type": "query",
+                "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+              },
+              {
+                "name": "team",
+                "value": "147",
+                "type": "query",
+                "description": "The ID value(s) of the team(s) for which you are requesting markets."
+              },
+              {
+                "name": "player",
+                "value": "605141",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "game",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "gameId",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "date",
+                "value": "2019-08-12",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Players Props Historical"
+        },
+        {
+          "info": {
+            "name": "Mlb Players Props Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/players/props/inplay",
+            "params": [
+              {
+                "name": "date",
+                "value": "2019-08-12",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "gameId",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "marketId",
+                "value": "35655204560783130210101",
+                "type": "query",
+                "description": "The ID value(s) of the specific market you are requesting data."
+              },
+              {
+                "name": "team",
+                "value": "147",
+                "type": "query",
+                "description": "The ID value(s) of the team(s) for which you are requesting markets."
+              },
+              {
+                "name": "opponent",
+                "value": "111",
+                "type": "query",
+                "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+              },
+              {
+                "name": "player",
+                "value": "605141",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "stat",
+                "value": "300",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "starter",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets for players classified as either starters (true) or non-starters (false)"
+              },
+              {
+                "name": "dueUp",
+                "value": "2",
+                "type": "query",
+                "description": "Can be used to expand the scope of requested markets. Accepts values from 0 to 17 , where 0 equals markets for the hitter currently at-bat, and 17 equals all markets for all 9 batters across both teams"
+              },
+              {
+                "name": "marketOpen",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets that are classified as either open (true) or not open (false). This parameter must be used in conjunction with one of the following parameters to ensure a valid request: date, gameId modifiedAtMicro, modifiedAtMicroGreater"
+              },
+              {
+                "name": "pitcher",
+                "value": "477132",
+                "type": "query",
+                "description": "The ID value(s) or name(s) of the pitcher(s) being faced by batter for whom you are requesting data."
+              },
+              {
+                "name": "format",
+                "value": "pretty",
+                "type": "query"
+              },
+              {
+                "name": "eventTypeId",
+                "value": "1",
+                "type": "query",
+                "description": "The ID value(s) denoting the type of the game(s) for which you are requesting data."
+              },
+              {
+                "name": "game",
+                "value": "823244",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Players Props Inplay"
+        },
+        {
+          "info": {
+            "name": "Mlb Players Props Inplay Cumulative",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/mlb/players/props/inplay/cumulative",
+            "params": [
+              {
+                "name": "stat",
+                "value": "300",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "game",
+                "value": "565378",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "date",
+                "value": "2019-08-12",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Mlb Players Props Inplay Cumulative"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

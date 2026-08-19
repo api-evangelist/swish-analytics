@@ -1,0 +1,992 @@
+{
+  "item": [
+    {
+      "id": "69c005a8-95c4-4803-a389-cf9316c79186",
+      "name": "Bet Request",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1c445b7e-c82a-4da3-a02b-a762ea3aee91",
+          "name": "Bet-request",
+          "request": {
+            "name": "Bet-request",
+            "description": {},
+            "url": {
+              "path": [
+                "bet-request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parlay",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "margin",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+                },
+                {
+                  "disabled": false,
+                  "key": "marketAdj",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+                },
+                {
+                  "disabled": false,
+                  "key": "sport",
+                  "value": "<string>",
+                  "description": "(Required) Specifies the sport associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the unique gameId associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "playerId",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the unique playerId associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "teamId",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the unique teamId associated with each leg you are requesting per props object. When requesting match-level markets that are not specifically tied to one team, teamId is still required, but either teamId from the match is allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "statTypeId",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the unique statTypeId associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "(Required) Specifies the selection of the bet associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "line",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the specific line of the bet associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "ignoreNegCorrelation",
+                  "value": "<boolean>",
+                  "description": "Specifies whether you want your request to return a price without negative correlation adjustments (true) or with negative correlation adjustments (false). This parameter is optional; if you do not include it, each request will continue to default to stan"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "374181f0-370e-41b9-bc8b-68d7d9e80f08",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bet-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nba"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "teamId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "ignoreNegCorrelation",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"endpoint\": \"string\",\n  \"gameId\": 1576.6373309380933,\n  \"id\": 9185.326055265698,\n  \"line\": 5149.332415057056,\n  \"margin\": 9274.971917372442,\n  \"marketAdj\": false,\n  \"marketSuspended\": false,\n  \"over\": 1273.948488165152,\n  \"parlay\": false,\n  \"parlayProb\": 8212.802359162535,\n  \"parlaySuspended\": true,\n  \"playerId\": 7734.885377783741,\n  \"playerName\": \"string\",\n  \"prob\": 8535.437675190295,\n  \"push\": 4836.221415564147,\n  \"sport\": \"string\",\n  \"status\": false,\n  \"teamId\": 4191.798228755233,\n  \"type\": \"string\",\n  \"under\": 4203.255055117944\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9db5d8e3-7030-4938-826b-f40fa0e47bb9",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bet-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nba"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "teamId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "ignoreNegCorrelation",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": true,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "77d79e2e-5ebb-4bdd-ab4c-f64043b76a90",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bet-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nba"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "teamId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "ignoreNegCorrelation",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": true,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a76e60f8-041d-4908-90e5-bc2140a7916c",
+          "name": "Bet-request Inplay",
+          "request": {
+            "name": "Bet-request Inplay",
+            "description": {},
+            "url": {
+              "path": [
+                "bet-request",
+                "inplay"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2f3eedc7-4271-4e58-a066-a05cf802411e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bet-request",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bb8a6061-2148-4dbe-a47d-651d5ad65ff0",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bet-request",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": true,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "146ddf05-b28c-415e-aba2-d65250814255",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bet-request",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": true,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "998294fc-e72e-4396-9554-b8cace54d7d5",
+          "name": "Bet-request Results",
+          "request": {
+            "name": "Bet-request Results",
+            "description": {},
+            "url": {
+              "path": [
+                "bet-request",
+                "results"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parlay",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "margin",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+                },
+                {
+                  "disabled": false,
+                  "key": "marketAdj",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+                },
+                {
+                  "disabled": false,
+                  "key": "sport",
+                  "value": "<string>",
+                  "description": "(Required) Specifies the sport associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the unique gameId associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "playerId",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the unique playerId associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "teamId",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the unique teamId associated with each leg you are requesting per props object. When requesting match-level markets that are not specifically tied to one team, teamId is still required, but either teamId from the match is allowed"
+                },
+                {
+                  "disabled": false,
+                  "key": "statTypeId",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the unique statTypeId associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "(Required) Specifies the selection of the bet associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "line",
+                  "value": "<number>",
+                  "description": "(Required) Specifies the specific line of the bet associated with each leg you are requesting per props object"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Specific to Soccer, this parameter notates the type of resulting you are requesting as it pertains to whether or not a player started the match or substituted. For example: passing prematch would void markets for players that did not start the match, whereas passing inplay would not void if a player does not start the match if they enter the game as a substitute."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b66e37d5-7457-4416-a1e4-ad6abad42095",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bet-request",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nba"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "teamId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "inplay"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"gameId\": 3071.204549681058,\n  \"grade\": \"string\",\n  \"line\": 3080.0834024517376,\n  \"lineType\": \"string\",\n  \"margin\": 3616.950356455144,\n  \"marketAdj\": true,\n  \"marketSuspended\": false,\n  \"parlay\": false,\n  \"parlaySuspended\": true,\n  \"playerId\": 4690.867481202835,\n  \"sport\": \"string\",\n  \"statTypeId\": 2471.5731193020583,\n  \"status\": true,\n  \"teamId\": 5119.72845684883\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b4f932f4-e8a9-44b0-b20e-583444d352ab",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bet-request",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nba"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "teamId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "inplay"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": true,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79bde5b6-b09b-4d38-bc44-fc9552a6c909",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bet-request",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nba"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "teamId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "inplay"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": false,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": true,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.swishanalytics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "ApiKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "82514ed7-daa7-4631-9a1c-af3d9655120b",
+    "name": "Swish Analytics Sportsbook ATP Tennis Bet Request API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Machine-learning sportsbook data API from Swish Analytics: player prop pricing, pre-match and in-play match/team markets, bet-request (single and parlay) pricing, and results across NFL, NBA, MLB, NHL, NCAA basketball & football, ATP, WTA and soccer. Derived by the API Evangelist enrichment pipeline from the provider's live documentation service (docs-api.swishanalytics.com/v1). Content is faithful to published docs; not an authoritative provider-published OpenAPI.\n\nContact Support:\n Name: Swish Analytics",
+      "type": "text/plain"
+    }
+  }
+}

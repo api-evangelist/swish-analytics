@@ -1,0 +1,948 @@
+{
+  "item": [
+    {
+      "id": "868884e3-1fa9-4665-8933-c9466c2e9c5d",
+      "name": "ATP Tennis",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8abeb23e-426c-4022-b05a-765689811c51",
+          "name": "Atp Matches Markets Prematch",
+          "request": {
+            "name": "Atp Matches Markets Prematch",
+            "description": {},
+            "url": {
+              "path": [
+                "atp",
+                "matches",
+                "markets",
+                "prematch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting market data."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting market data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received."
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "duration",
+                  "value": "<string>",
+                  "description": "Can be used to specifically request data for those markets that are at the match-level ( match ) or the set-level ( set ). Please note that this parameter is optional and you do not need to utilize it if you desire all available markets."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "64e271c8-76f4-4632-a89a-3c63f786fc1d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "atp",
+                    "matches",
+                    "markets",
+                    "prematch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2020-01-15"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2026-06-15 12:22:38.558000"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "match"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accrued\": 2271.9456735067756,\n  \"balanced\": true,\n  \"count\": 8491.90417745124,\n  \"dataConfirmed\": true,\n  \"date\": \"string\",\n  \"description\": \"string\",\n  \"end\": 3902.657099520288,\n  \"id\": 7693.314909721651,\n  \"line\": 2135.4340502206005,\n  \"marketSuspended\": true,\n  \"matchId\": 6211.776811895442,\n  \"mean\": 4324.990124310754,\n  \"median\": 7601.714522966223,\n  \"modifiedAt\": \"string\",\n  \"modifiedAtMicro\": \"string\",\n  \"name\": \"string\",\n  \"optimal\": true,\n  \"over\": 6677.301830033165,\n  \"season\": 7656.989856572432,\n  \"settled\": false,\n  \"sport\": \"string\",\n  \"start\": 247.3898634921934,\n  \"status\": 5168.444822291852,\n  \"type\": \"string\",\n  \"under\": 8031.297493806451,\n  \"value\": 9769.936715104583,\n  \"void\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a9e6013d-fef5-49da-8197-1161123ba1c5",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "atp",
+                    "matches",
+                    "markets",
+                    "prematch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2020-01-15"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2026-06-15 12:22:38.558000"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "match"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "665a9be9-dcdd-4f16-8499-fde338f56ee3",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "atp",
+                    "matches",
+                    "markets",
+                    "prematch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2020-01-15"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2026-06-15 12:22:38.558000"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "match"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c37748d1-86ce-4f04-afb3-8b1679a18ec8",
+          "name": "Atp Players Props",
+          "request": {
+            "name": "Atp Players Props",
+            "description": {},
+            "url": {
+              "path": [
+                "atp",
+                "players",
+                "props"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fractional lines or integer lines."
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "duration",
+                  "value": "<string>",
+                  "description": "Can be used to specifically request data for those markets that are at the match-level ( match ) or the set-level ( set ). Please note that this parameter is optional and you do not need to utilize it if you desire all available markets"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c8b56b78-70b5-44e4-836d-90274b9d39fe",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "atp",
+                    "players",
+                    "props"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2023-08-10 13:57:09.433966"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "match"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accrued\": 6913.562407064706,\n  \"balanced\": false,\n  \"count\": 8656.150161529487,\n  \"dataConfirmed\": true,\n  \"date\": \"string\",\n  \"description\": \"string\",\n  \"end\": 2141.5411225215475,\n  \"endpoint\": \"string\",\n  \"id\": \"string\",\n  \"line\": 2251.2027393193434,\n  \"marketId\": \"string\",\n  \"marketSuspended\": false,\n  \"mean\": 8046.615717091358,\n  \"median\": 598.2089251906242,\n  \"modifiedAt\": \"string\",\n  \"modifiedAtMicro\": \"string\",\n  \"name\": \"string\",\n  \"optimal\": true,\n  \"over\": 1542.0371324880778,\n  \"playerId\": 2012.0905493829732,\n  \"playerName\": \"string\",\n  \"push\": 2152.7384242617554,\n  \"season\": 1392.8608667042608,\n  \"settled\": true,\n  \"sport\": \"string\",\n  \"start\": 2955.8579174434462,\n  \"status\": 5768.011916312017,\n  \"type\": \"string\",\n  \"under\": 4467.803627934537,\n  \"value\": 2356.1848126867135,\n  \"void\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ebdf9076-518a-4a6e-82ac-e7f5b76577bd",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "atp",
+                    "players",
+                    "props"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2023-08-10 13:57:09.433966"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "match"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ee8f519-f4ba-4ab6-a35c-d7e881504660",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "atp",
+                    "players",
+                    "props"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2023-08-10 13:57:09.433966"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "match"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86ff1751-ed63-4923-a4b4-894d6dddf0a0",
+          "name": "Atp Players Props Inplay",
+          "request": {
+            "name": "Atp Players Props Inplay",
+            "description": {},
+            "url": {
+              "path": [
+                "atp",
+                "players",
+                "props",
+                "inplay"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fractional lines or integer lines."
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "duration",
+                  "value": "<string>",
+                  "description": "Can be used to specifically request data for those markets that are at the match-level ( match ), the set-level ( set ) or the game-level ( game ). Please note that this parameter is optional and you do not need to utilize"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7d8818cd-f98f-41b6-a1f8-4261842d49b1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "atp",
+                    "players",
+                    "props",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2023-08-10 13:57:09.433966"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "match"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accrued\": 5163.511883876984,\n  \"balanced\": false,\n  \"count\": 7340.2280435473,\n  \"dataConfirmed\": false,\n  \"date\": \"string\",\n  \"description\": \"string\",\n  \"end\": 3173.092235368975,\n  \"endpoint\": \"string\",\n  \"id\": \"string\",\n  \"line\": 9706.18832503654,\n  \"marketId\": \"string\",\n  \"marketSuspended\": true,\n  \"mean\": 6886.498535250411,\n  \"median\": 9311.333457971916,\n  \"modifiedAt\": \"string\",\n  \"modifiedAtMicro\": \"string\",\n  \"name\": \"string\",\n  \"optimal\": true,\n  \"over\": 6261.303187213937,\n  \"playerId\": \"string\",\n  \"playerName\": \"string\",\n  \"push\": 287.31735530135416,\n  \"season\": 4195.876316737383,\n  \"settled\": false,\n  \"sport\": \"string\",\n  \"start\": 7012.948787711325,\n  \"status\": 6651.982225670065,\n  \"type\": \"string\",\n  \"under\": 9587.977021516188,\n  \"value\": 7203.174279721967,\n  \"void\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8deab8c0-7133-4629-8217-5d5b62ba6269",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "atp",
+                    "players",
+                    "props",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2023-08-10 13:57:09.433966"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "match"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02705564-f356-4a94-9f00-ac2e42af72fd",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "atp",
+                    "players",
+                    "props",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2023-08-10 13:57:09.433966"
+                    },
+                    {
+                      "key": "duration",
+                      "value": "match"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.swishanalytics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "ApiKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b344c6d5-ce3c-45b9-96b2-6bf0143eca94",
+    "name": "Swish Analytics Sportsbook ATP Tennis API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Machine-learning sportsbook data API from Swish Analytics: player prop pricing, pre-match and in-play match/team markets, bet-request (single and parlay) pricing, and results across NFL, NBA, MLB, NHL, NCAA basketball & football, ATP, WTA and soccer. Derived by the API Evangelist enrichment pipeline from the provider's live documentation service (docs-api.swishanalytics.com/v1). Content is faithful to published docs; not an authoritative provider-published OpenAPI.\n\nContact Support:\n Name: Swish Analytics",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,4506 @@
+{
+  "item": [
+    {
+      "id": "7d966bbc-0f11-46ba-8c33-22dd5b0376cc",
+      "name": "MLB",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6744b6a5-ecaa-4778-b0cd-8eee667b2c9b",
+          "name": "Mlb Bet-request",
+          "request": {
+            "name": "Mlb Bet-request",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "bet-request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parlay",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "margin",
+                  "value": "<string>",
+                  "description": "(Required) Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+                },
+                {
+                  "disabled": false,
+                  "key": "marketAdj",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+                },
+                {
+                  "disabled": false,
+                  "key": "sport",
+                  "value": "<string>",
+                  "description": "(Required) Provides the appropriate 3-letter abbreviation of the sport for which you are requesting data"
+                },
+                {
+                  "disabled": false,
+                  "key": "playerId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the player(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "statTypeId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value of the stat-type for which you are requesting a market. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "line",
+                  "value": "<number>",
+                  "description": "(Required) The specific line value for which you are requesting pricing. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "(Required) Can be used to request only fractional lines or integer lines."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "65a4a79e-ac58-4484-af40-14586bcb26ba",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "bet-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "mlb"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"endpoint\": \"string\",\n  \"gameId\": 8072.972507500622,\n  \"id\": 6002.076253118968,\n  \"line\": 4409.559536253472,\n  \"margin\": 58.62470990361635,\n  \"marketAdj\": true,\n  \"marketSuspended\": false,\n  \"over\": 5846.572198421796,\n  \"parlay\": false,\n  \"parlayProb\": 1053.372602924937,\n  \"parlaySuspended\": true,\n  \"playerId\": 4886.769661206296,\n  \"prob\": 7893.434326653821,\n  \"push\": 5266.3797414297005,\n  \"sport\": \"string\",\n  \"status\": true,\n  \"type\": \"string\",\n  \"under\": 8321.746772293738\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bb174d60-0464-4770-8778-883bbe63c316",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "bet-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "mlb"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1905be25-d616-4986-92dd-dd7ab86a1568",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "bet-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "mlb"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9385b8b-3876-4c9d-bdcb-fc1798a6270f",
+          "name": "Mlb Bet-request Results",
+          "request": {
+            "name": "Mlb Bet-request Results",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "bet-request",
+                "results"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parlay",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "margin",
+                  "value": "<string>",
+                  "description": "(Required) Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+                },
+                {
+                  "disabled": false,
+                  "key": "marketAdj",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+                },
+                {
+                  "disabled": false,
+                  "key": "sport",
+                  "value": "<string>",
+                  "description": "(Required) Provides the appropriate 3-letter abbreviation of the sport for which you are requesting data"
+                },
+                {
+                  "disabled": false,
+                  "key": "playerId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the player(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "statTypeId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value of the stat-type for which you are requesting a market. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "line",
+                  "value": "<number>",
+                  "description": "(Required) The specific line value for which you are requesting pricing. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "(Required) Can be used to request only fractional lines or integer lines."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9db3c66e-2181-4dd6-82be-e52daf20dc25",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "bet-request",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "mlb"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"gameId\": 9888.807356830392,\n  \"grade\": \"string\",\n  \"line\": 9648.403808292676,\n  \"lineType\": \"string\",\n  \"margin\": 1075.2732824692812,\n  \"marketAdj\": false,\n  \"marketSuspended\": true,\n  \"parlay\": false,\n  \"parlaySuspended\": false,\n  \"playerId\": 1379.3378726273875,\n  \"sport\": \"string\",\n  \"statTypeId\": 6552.298370884414,\n  \"status\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2693498-2337-4d28-80ae-1bd21633232c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "bet-request",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "mlb"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f25cd85-b1a4-4ec0-8b98-05469192810b",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "bet-request",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "mlb"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2bd47e5a-236c-443c-8d5a-ada086731d25",
+          "name": "Mlb Matches Markets Inplay",
+          "request": {
+            "name": "Mlb Matches Markets Inplay",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "matches",
+                "markets",
+                "inplay"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "season",
+                  "value": "<number>",
+                  "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+                },
+                {
+                  "disabled": false,
+                  "key": "balanced",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "team",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the team(s) for which you are requesting markets."
+                },
+                {
+                  "disabled": false,
+                  "key": "opponent",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "459450f6-303e-4232-86e5-7aa3c541f3ae",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbr\": \"string\",\n  \"abbreviation\": \"string\",\n  \"awaySummaryId\": \"string\",\n  \"balanced\": false,\n  \"count\": 6316.384102255242,\n  \"date\": \"string\",\n  \"description\": \"string\",\n  \"endpoint\": \"string\",\n  \"homeSummaryId\": \"string\",\n  \"id\": 3930.3528790816113,\n  \"line\": 3194.9903252378786,\n  \"marketSuspended\": false,\n  \"matchId\": 2256.589490582105,\n  \"mean\": 3488.998119220896,\n  \"median\": 9700.076078556538,\n  \"micro\": \"string\",\n  \"optimal\": true,\n  \"over\": 5354.252413770646,\n  \"push\": 931.5341214363559,\n  \"resultingId\": \"string\",\n  \"season\": 7313.633668557496,\n  \"seconds\": \"string\",\n  \"sport\": \"string\",\n  \"type\": \"string\",\n  \"under\": 1322.390181803208\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "021edd40-1eb3-4bde-8e3a-f73e087d132a",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da05d773-534b-462d-bf87-6cbb24877c15",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3c3000b-b377-4961-a556-37cef1cc22c3",
+          "name": "Mlb Matches Markets Inplay Alternates",
+          "request": {
+            "name": "Mlb Matches Markets Inplay Alternates",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "matches",
+                "markets",
+                "inplay",
+                "alternates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<string>",
+                  "description": "(Required) The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<string>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+                },
+                {
+                  "disabled": false,
+                  "key": "wasBalanced",
+                  "value": "<string>",
+                  "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "milestone",
+                  "value": "<string>",
+                  "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a5e8df9a-0962-48fb-b14d-66df508fb64b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "inplay",
+                    "alternates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "823524"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "335"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "false"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2026-07-12 20:30:25.335110"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbr\": \"string\",\n  \"abbreviation\": \"string\",\n  \"balanced\": 4506.070217486812,\n  \"count\": 1428.7183547051752,\n  \"date\": \"string\",\n  \"description\": \"string\",\n  \"end\": 5600.296784634084,\n  \"endpoint\": \"string\",\n  \"id\": 5795.679880790986,\n  \"line\": 4156.832781555167,\n  \"marketSuspended\": true,\n  \"matchId\": 5405.834243367716,\n  \"mean\": 6842.0468431995905,\n  \"median\": 6815.29916329433,\n  \"micro\": \"string\",\n  \"milestone\": 4042.499553627407,\n  \"optimal\": 9721.126046698822,\n  \"over\": 2715.9858728491217,\n  \"push\": 3545.6303134376744,\n  \"season\": 9755.469891316769,\n  \"seconds\": \"string\",\n  \"sport\": \"string\",\n  \"start\": 1030.5095741514658,\n  \"type\": \"string\",\n  \"under\": 3772.2224141057036,\n  \"wasBalanced\": 1566.9618932764752\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b103093-4a7f-4e7e-8c61-fbedb2fc1007",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "inplay",
+                    "alternates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "823524"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "335"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "false"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2026-07-12 20:30:25.335110"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40b1a1a3-a0da-4d30-9b35-ed1eb951e994",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "inplay",
+                    "alternates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "823524"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "335"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "false"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2026-07-12 20:30:25.335110"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1f5947a-457d-4dc6-8272-ab1bd6ed08fc",
+          "name": "Mlb Matches Markets Prematch",
+          "request": {
+            "name": "Mlb Matches Markets Prematch",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "matches",
+                "markets",
+                "prematch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "team",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the team(s) for which you are requesting markets."
+                },
+                {
+                  "disabled": false,
+                  "key": "opponent",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "season",
+                  "value": "<number>",
+                  "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "balanced",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4d6d23fe-a9de-49e0-9757-d4069986d676",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "prematch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbreviation\": \"string\",\n  \"awaySummaryId\": \"string\",\n  \"balanced\": true,\n  \"count\": 5887.191163384586,\n  \"date\": \"string\",\n  \"description\": \"string\",\n  \"endpoint\": \"string\",\n  \"homeSummaryId\": \"string\",\n  \"id\": 1838.6943487184137,\n  \"line\": 7934.335875595947,\n  \"marketSuspended\": false,\n  \"matchId\": 4912.470606425335,\n  \"mean\": 9742.131233003347,\n  \"median\": 5390.241998138949,\n  \"micro\": \"string\",\n  \"optimal\": false,\n  \"over\": 1425.4376304896875,\n  \"push\": 665.8881054172183,\n  \"resultingId\": \"string\",\n  \"season\": 6043.341660495679,\n  \"seconds\": \"string\",\n  \"sport\": \"string\",\n  \"type\": \"string\",\n  \"under\": 6850.931819465996\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2cb76874-448b-401a-b839-34491399ab78",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "prematch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "51325405-4122-421e-84c2-5bc22841b55c",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "prematch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5a132f1-7b2b-45a9-8bcb-acb276ad5ab8",
+          "name": "Mlb Matches Markets Prematch Alternates",
+          "request": {
+            "name": "Mlb Matches Markets Prematch Alternates",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "matches",
+                "markets",
+                "prematch",
+                "alternates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<string>",
+                  "description": "(Required) The ID value of the event for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<string>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values."
+                },
+                {
+                  "disabled": false,
+                  "key": "wasBalanced",
+                  "value": "<string>",
+                  "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "milestone",
+                  "value": "<string>",
+                  "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "38f02329-450a-4c94-8f03-7421063478b4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "prematch",
+                    "alternates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "777878"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "305"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "true"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2025-05-18 22:016:13.086136"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbr\": \"string\",\n  \"abbreviation\": \"string\",\n  \"balanced\": 6173.8727858793345,\n  \"count\": 175.9074630425006,\n  \"date\": \"string\",\n  \"description\": \"string\",\n  \"end\": 6843.167855490287,\n  \"endpoint\": \"string\",\n  \"id\": 4491.58479236224,\n  \"line\": 4963.859086519842,\n  \"marketSuspended\": true,\n  \"matchId\": 2910.209869128365,\n  \"mean\": 7665.219409691071,\n  \"median\": 5432.583968902397,\n  \"micro\": \"string\",\n  \"milestone\": 7064.287111252017,\n  \"optimal\": 1567.1809946322824,\n  \"over\": 4555.088724475813,\n  \"push\": 4354.268643038401,\n  \"season\": 399.26410575104376,\n  \"seconds\": \"string\",\n  \"sport\": \"string\",\n  \"start\": 7356.057971669413,\n  \"type\": \"string\",\n  \"under\": 173.37522357954606,\n  \"wasBalanced\": 2297.8203284231367\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba6b588c-690b-47e2-8f44-6b7fa0016d08",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "prematch",
+                    "alternates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "777878"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "305"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "true"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2025-05-18 22:016:13.086136"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d08985c4-9918-42ed-bbe0-063900e84b49",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "matches",
+                    "markets",
+                    "prematch",
+                    "alternates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "777878"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "305"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "true"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2025-05-18 22:016:13.086136"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d690cf4-d7ba-4bf4-9598-d8a99736da7f",
+          "name": "Mlb Players Props",
+          "request": {
+            "name": "Mlb Players Props",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "players",
+                "props"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fractional lines or integer lines."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "22b74064-c14b-462b-9e6f-119edb290dc0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbreviation\": \"string\",\n  \"balanced\": false,\n  \"count\": 1555.24229372772,\n  \"date\": \"string\",\n  \"endpoint\": \"string\",\n  \"home\": false,\n  \"id\": 4913.935431638694,\n  \"line\": 2205.5791311245466,\n  \"marketSuspended\": false,\n  \"mean\": 4201.573605358381,\n  \"median\": 8438.223362086976,\n  \"modifiedAt\": \"string\",\n  \"name\": \"string\",\n  \"official\": true,\n  \"open\": true,\n  \"optimal\": true,\n  \"over\": 1394.9235497003542,\n  \"overSuspended\": true,\n  \"playerId\": 7910.423160942488,\n  \"playerName\": \"string\",\n  \"position\": \"string\",\n  \"push\": 1344.973437018906,\n  \"pushSuspended\": true,\n  \"season\": 3173.550841177457,\n  \"sport\": \"string\",\n  \"starter\": true,\n  \"under\": 9404.678720051867,\n  \"underSuspended\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "81deb8eb-7adf-4f0d-aebc-e2a3f081697a",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e9699f9d-bcb3-4c4f-a349-16c0d8ee9f32",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75775494-2d72-429b-be52-335588a52a29",
+          "name": "Mlb Players Props Alternates",
+          "request": {
+            "name": "Mlb Players Props Alternates",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "players",
+                "props",
+                "alternates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "season",
+                  "value": "<number>",
+                  "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fractional lines or integer lines."
+                },
+                {
+                  "disabled": false,
+                  "key": "balanced",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "starter",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets for players classified as either starters (true) or non-starters (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "player",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the player(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "opponent",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "team",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the team(s) for which you are requesting markets."
+                },
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "wasBalanced",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "milestone",
+                  "value": "<boolean>",
+                  "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "21ffb0ad-2c00-42e4-8487-753843fdb7a8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "alternates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "starter",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "player",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbreviation\": \"string\",\n  \"balanced\": false,\n  \"count\": 5129.200621699835,\n  \"date\": \"string\",\n  \"endpoint\": \"string\",\n  \"home\": false,\n  \"id\": 8940.922838974444,\n  \"line\": 7603.870621390951,\n  \"marketSuspended\": true,\n  \"mean\": 2041.081407242703,\n  \"median\": 4508.140876931948,\n  \"milestone\": false,\n  \"modifiedAt\": \"string\",\n  \"name\": \"string\",\n  \"official\": false,\n  \"open\": true,\n  \"optimal\": true,\n  \"over\": 2813.6042723963405,\n  \"overSuspended\": false,\n  \"playerId\": 7214.764958594703,\n  \"playerName\": \"string\",\n  \"position\": \"string\",\n  \"push\": 2937.381206191637,\n  \"pushSuspended\": false,\n  \"season\": 2521.1513232397133,\n  \"sport\": \"string\",\n  \"starter\": true,\n  \"under\": 6567.118462196533,\n  \"underSuspended\": false,\n  \"wasBalanced\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db69bd3c-4203-414a-aac8-c55f417ec0b3",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "alternates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "starter",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "player",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ecd94a7-8765-4f83-8cb9-939614cc5c99",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "alternates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "starter",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "player",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "525348bb-877d-45e5-ac62-92892a2a1c15",
+          "name": "Mlb Players Props Alternates Inplay",
+          "request": {
+            "name": "Mlb Players Props Alternates Inplay",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "players",
+                "props",
+                "alternates",
+                "inplay"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "(Required) The ID value of the event for which you are requesting market data. Accepts only a single value"
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+                },
+                {
+                  "disabled": false,
+                  "key": "wasBalanced",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values"
+                },
+                {
+                  "disabled": false,
+                  "key": "milestone",
+                  "value": "<boolean>",
+                  "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0606f027-753c-4615-b7d1-0fd19622b7c1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "alternates",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2024-04-01 17:40:55.188372"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbreviation\": \"string\",\n  \"count\": 5940.379015275722,\n  \"date\": \"string\",\n  \"endpoint\": \"string\",\n  \"home\": true,\n  \"id\": 9487.340990389239,\n  \"line\": 8244.023939637817,\n  \"marketSuspended\": false,\n  \"mean\": 2516.1083168001765,\n  \"median\": 6486.014313256274,\n  \"milestone\": true,\n  \"modifiedAt\": \"string\",\n  \"modifiedAtMicro\": \"string\",\n  \"name\": \"string\",\n  \"open\": true,\n  \"optimal\": true,\n  \"over\": 9224.568709647698,\n  \"overSuspended\": true,\n  \"playerId\": 1211.5862383193798,\n  \"playerName\": \"string\",\n  \"position\": \"string\",\n  \"push\": 5707.808069069689,\n  \"pushSuspended\": false,\n  \"season\": 3999.309086069185,\n  \"sport\": \"string\",\n  \"starter\": false,\n  \"type\": \"string\",\n  \"under\": 3316.990243523822,\n  \"underSuspended\": true,\n  \"wasBalanced\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2f8f7119-2cf6-420e-9ae2-b3de451ae826",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "alternates",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2024-04-01 17:40:55.188372"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a820f1c-4e83-4ec6-8c4e-e56297bd12a7",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "alternates",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "wasBalanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "milestone",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2024-04-01 17:40:55.188372"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "93b7ef6b-99bd-4da8-b36b-9db1002a389d",
+          "name": "Mlb Players Props Historical",
+          "request": {
+            "name": "Mlb Players Props Historical",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "players",
+                "props",
+                "historical"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "season",
+                  "value": "<number>",
+                  "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fractional lines or integer lines."
+                },
+                {
+                  "disabled": false,
+                  "key": "balanced",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "starter",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets for players classified as either starters (true) or non-starters (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "positionAbbr",
+                  "value": "<string>",
+                  "description": "The common abbreviation for a specified position."
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "position",
+                  "value": "<string>",
+                  "description": "The common abbreviation for a specified position."
+                },
+                {
+                  "disabled": false,
+                  "key": "opponent",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "team",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the team(s) for which you are requesting markets."
+                },
+                {
+                  "disabled": false,
+                  "key": "player",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the player(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0c425ba6-e7f0-422c-8ea2-e2c34ddf6031",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "historical"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "starter",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "positionAbbr",
+                      "value": "SS"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "position",
+                      "value": "SS"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "player",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbreviation\": \"string\",\n  \"balanced\": false,\n  \"count\": 2811.7731594432007,\n  \"date\": \"string\",\n  \"endpoint\": \"string\",\n  \"home\": true,\n  \"id\": 2940.8146266585577,\n  \"line\": 8272.674462380774,\n  \"marketSuspended\": true,\n  \"mean\": 8172.362254082558,\n  \"median\": 9682.422685374351,\n  \"modifiedAt\": \"string\",\n  \"name\": \"string\",\n  \"official\": true,\n  \"open\": true,\n  \"optimal\": false,\n  \"over\": 5247.376285538023,\n  \"playerId\": 1343.4126117415824,\n  \"playerName\": \"string\",\n  \"position\": \"string\",\n  \"push\": 9926.810871311858,\n  \"season\": 166.99658058827228,\n  \"sport\": \"string\",\n  \"starter\": false,\n  \"under\": 3539.642730366668\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d095484-2a38-4edf-9e3b-058fa2392689",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "historical"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "starter",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "positionAbbr",
+                      "value": "SS"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "position",
+                      "value": "SS"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "player",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1f15829e-67a7-42f6-ae33-39d4acd0db5a",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "historical"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "starter",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "positionAbbr",
+                      "value": "SS"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "position",
+                      "value": "SS"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "player",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1c2da02-7277-415e-99e1-eeb3a3750eb7",
+          "name": "Mlb Players Props Inplay",
+          "request": {
+            "name": "Mlb Players Props Inplay",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "players",
+                "props",
+                "inplay"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "marketId",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the specific market you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "team",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the team(s) for which you are requesting markets."
+                },
+                {
+                  "disabled": false,
+                  "key": "opponent",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "player",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the player(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "season",
+                  "value": "<number>",
+                  "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "balanced",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fractional lines or integer lines."
+                },
+                {
+                  "disabled": false,
+                  "key": "starter",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets for players classified as either starters (true) or non-starters (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dueUp",
+                  "value": "<number>",
+                  "description": "Can be used to expand the scope of requested markets. Accepts values from 0 to 17 , where 0 equals markets for the hitter currently at-bat, and 17 equals all markets for all 9 batters across both teams"
+                },
+                {
+                  "disabled": false,
+                  "key": "marketOpen",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets that are classified as either open (true) or not open (false). This parameter must be used in conjunction with one of the following parameters to ensure a valid request: date, gameId modifiedAtMicro, modifiedAtMicroGreater"
+                },
+                {
+                  "disabled": false,
+                  "key": "pitcher",
+                  "value": "<number>",
+                  "description": "The ID value(s) or name(s) of the pitcher(s) being faced by batter for whom you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "eventTypeId",
+                  "value": "<number>",
+                  "description": "The ID value(s) denoting the type of the game(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "85a15710-debf-4d99-baa9-7612a0ebcbe6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "marketId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "player",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "starter",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "dueUp",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "marketOpen",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pitcher",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "pretty"
+                    },
+                    {
+                      "key": "eventTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"atBatNumber\": 9582.485348456004,\n  \"atBatOutcome\": \"string\",\n  \"atBatOutcomeId\": 8143.548269980671,\n  \"balanced\": false,\n  \"count\": 3278.0481870166323,\n  \"date\": \"string\",\n  \"dueUp\": 506.89548811470917,\n  \"endpoint\": \"string\",\n  \"gameId\": 7867.892182370722,\n  \"grade\": \"string\",\n  \"gradeId\": 8456.854941615835,\n  \"group\": \"string\",\n  \"groupId\": 6681.307728569781,\n  \"inning\": 4101.883030443903,\n  \"line\": 1004.9301612860418,\n  \"lineType\": \"string\",\n  \"marketDurationDescription\": \"string\",\n  \"marketDurationEnd\": 1220.1646594256742,\n  \"marketDurationId\": 6409.250079027132,\n  \"marketDurationStart\": 3759.442946446907,\n  \"marketId\": 5614.360436252977,\n  \"marketOpen\": 7350.523272312735,\n  \"marketOpenDescription\": \"string\",\n  \"marketOpenId\": 6923.213286182096,\n  \"marketSuspended\": 9420.43008932935,\n  \"marketSuspendedDescription\": \"string\",\n  \"marketSuspendedId\": 9138.802469161803,\n  \"modifiedAt\": \"string\",\n  \"name\": \"string\",\n  \"nOver\": 2734.7768851966903,\n  \"nUnder\": 1905.2275189671698,\n  \"occured\": 1469.9643546003094,\n  \"oppAbbr\": \"string\",\n  \"oppId\": 5520.733590170934,\n  \"optimal\": 2712.266348042666,\n  \"over\": 4475.208069241858,\n  \"pitcherId\": \"string\",\n  \"pitcherName\": \"string\",\n  \"playerId\": 6667.81416470834,\n  \"prePitchBalls\": 6902.068492656731,\n  \"prePitchFouls\": 3272.6059616808843,\n  \"prePitchOuts\": 2396.028289414686,\n  \"prePitchPitchCountAtBat\": 7496.631150621835,\n  \"prePitchStrikes\": 336.23531546959964,\n  \"push\": 2447.6409621305584,\n  \"season\": 4005.457296942976,\n  \"sportId\": \"string\",\n  \"teamAbbr\": \"string\",\n  \"teamId\": 3338.786101427835,\n  \"top\": 4338.410621041555,\n  \"type\": \"string\",\n  \"typeId\": 5687.834574892412,\n  \"under\": 3027.3011059808773\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83fdd16a-c834-4763-bdfd-5f201755ab6e",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "marketId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "player",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "starter",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "dueUp",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "marketOpen",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pitcher",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "pretty"
+                    },
+                    {
+                      "key": "eventTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9264c6a8-6680-4994-9c25-23ea1244a1c8",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    },
+                    {
+                      "key": "marketId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "opponent",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "player",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "starter",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "dueUp",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "marketOpen",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pitcher",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "pretty"
+                    },
+                    {
+                      "key": "eventTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "316acbba-61da-4a7f-be71-fb3d1d8124db",
+          "name": "Mlb Players Props Inplay Cumulative",
+          "request": {
+            "name": "Mlb Players Props Inplay Cumulative",
+            "description": {},
+            "url": {
+              "path": [
+                "mlb",
+                "players",
+                "props",
+                "inplay",
+                "cumulative"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4525e418-125e-45e1-ada8-17c11629d575",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "inplay",
+                    "cumulative"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbreviation\": \"string\",\n  \"accrued\": 3683.0740186517164,\n  \"activeInGame\": 5811.122160136043,\n  \"activePreGame\": 9215.455042493744,\n  \"balanced\": true,\n  \"count\": 7906.774873437948,\n  \"date\": \"string\",\n  \"description\": \"string\",\n  \"endpoint\": \"string\",\n  \"home\": true,\n  \"id\": 4058.3709303402406,\n  \"line\": 1434.784425791672,\n  \"marketSuspended\": true,\n  \"mean\": 4196.464395514929,\n  \"median\": 7750.444142100713,\n  \"modifiedAt\": \"string\",\n  \"name\": \"string\",\n  \"official\": false,\n  \"open\": true,\n  \"optimal\": true,\n  \"over\": 3092.183091019676,\n  \"overSuspended\": false,\n  \"period\": 6588.543382254065,\n  \"playerId\": 4430.008348758552,\n  \"playerName\": \"string\",\n  \"position\": \"string\",\n  \"push\": 939.1201264514825,\n  \"pushSuspended\": false,\n  \"season\": 5750.347307353013,\n  \"sport\": \"string\",\n  \"starter\": true,\n  \"time\": 4534.050710874197,\n  \"under\": 651.3260212222405,\n  \"underSuspended\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4aac64ff-e2b4-4ed4-a28c-12c8ae978924",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "inplay",
+                    "cumulative"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9eb8dc68-3025-40ac-a319-1cdcf571f2ab",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mlb",
+                    "players",
+                    "props",
+                    "inplay",
+                    "cumulative"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-12"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.swishanalytics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "ApiKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6a4eec04-c84b-4432-97e6-1d1f6b86068b",
+    "name": "Swish Analytics Sportsbook ATP Tennis MLB API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Machine-learning sportsbook data API from Swish Analytics: player prop pricing, pre-match and in-play match/team markets, bet-request (single and parlay) pricing, and results across NFL, NBA, MLB, NHL, NCAA basketball & football, ATP, WTA and soccer. Derived by the API Evangelist enrichment pipeline from the provider's live documentation service (docs-api.swishanalytics.com/v1). Content is faithful to published docs; not an authoritative provider-published OpenAPI.\n\nContact Support:\n Name: Swish Analytics",
+      "type": "text/plain"
+    }
+  }
+}

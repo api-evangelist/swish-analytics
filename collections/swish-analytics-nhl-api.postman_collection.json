@@ -1,0 +1,1816 @@
+{
+  "item": [
+    {
+      "id": "92a149ec-bc83-4b3a-80a6-293280468937",
+      "name": "NHL",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6d08a3d5-a542-4336-8186-9170ab33a46b",
+          "name": "Nhl Bet-request",
+          "request": {
+            "name": "Nhl Bet-request",
+            "description": {},
+            "url": {
+              "path": [
+                "nhl",
+                "bet-request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parlay",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "margin",
+                  "value": "<string>",
+                  "description": "(Required) Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+                },
+                {
+                  "disabled": false,
+                  "key": "marketAdj",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+                },
+                {
+                  "disabled": false,
+                  "key": "sport",
+                  "value": "<string>",
+                  "description": "(Required) Provides the appropriate 3-letter abbreviation of the sport for which you are requesting data"
+                },
+                {
+                  "disabled": false,
+                  "key": "playerId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the player(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "statTypeId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value of the stat-type for which you are requesting a market. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "line",
+                  "value": "<number>",
+                  "description": "(Required) The specific line value for which you are requesting pricing. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "(Required) Can be used to request only fractional lines or integer lines."
+                },
+                {
+                  "disabled": false,
+                  "key": "parlay",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "margin",
+                  "value": "<string>",
+                  "description": "(Required) Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+                },
+                {
+                  "disabled": false,
+                  "key": "marketAdj",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+                },
+                {
+                  "disabled": false,
+                  "key": "sport",
+                  "value": "<string>",
+                  "description": "(Required) Provides the appropriate 3-letter abbreviation of the sport for which you are requesting data"
+                },
+                {
+                  "disabled": false,
+                  "key": "playerId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the player(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "statTypeId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value of the stat-type for which you are requesting a market. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "line",
+                  "value": "<number>",
+                  "description": "(Required) The specific line value for which you are requesting pricing. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "(Required) Can be used to request only fractional lines or integer lines."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7ac0db88-8d23-4b1e-b58c-6028609b57bd",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "bet-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nhl"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    },
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nhl"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"endpoint\": \"string\",\n  \"gameId\": 6473.750744040017,\n  \"id\": 6500.304002684915,\n  \"line\": 5158.310872476569,\n  \"margin\": 4518.758565476108,\n  \"marketAdj\": false,\n  \"marketSuspended\": true,\n  \"over\": 4131.109816289688,\n  \"parlay\": true,\n  \"parlayProb\": 7941.774238374699,\n  \"parlaySuspended\": true,\n  \"playerId\": 1370.6980098050847,\n  \"prob\": 3347.1152524787294,\n  \"push\": 3259.9876964973087,\n  \"sport\": \"string\",\n  \"status\": true,\n  \"type\": \"string\",\n  \"under\": 4617.508376721532\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2fed68c0-e455-4f07-a2f7-85c45dd252c1",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "bet-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nhl"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    },
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nhl"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "66b70dff-a15f-4f0f-9b0a-d498fb8bf964",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "bet-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nhl"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    },
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nhl"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74e554ee-acf1-4537-aef5-3e6a092de3f3",
+          "name": "Nhl Bet-request Results",
+          "request": {
+            "name": "Nhl Bet-request Results",
+            "description": {},
+            "url": {
+              "path": [
+                "nhl",
+                "bet-request",
+                "results"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parlay",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "margin",
+                  "value": "<string>",
+                  "description": "(Required) Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+                },
+                {
+                  "disabled": false,
+                  "key": "marketAdj",
+                  "value": "<boolean>",
+                  "description": "(Required) Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+                },
+                {
+                  "disabled": false,
+                  "key": "sport",
+                  "value": "<string>",
+                  "description": "(Required) Provides the appropriate 3-letter abbreviation of the sport for which you are requesting data"
+                },
+                {
+                  "disabled": false,
+                  "key": "playerId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the player(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "gameId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "statTypeId",
+                  "value": "<number>",
+                  "description": "(Required) The ID value of the stat-type for which you are requesting a market. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "line",
+                  "value": "<number>",
+                  "description": "(Required) The specific line value for which you are requesting pricing. This property accepts a single value per object"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "(Required) Can be used to request only fractional lines or integer lines."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4fb9bb82-0173-4e41-94ee-ecd198535c40",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "bet-request",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nhl"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"gameId\": 3019.883764005782,\n  \"grade\": \"string\",\n  \"line\": 3287.8150184680267,\n  \"lineType\": \"string\",\n  \"margin\": 6004.093500267035,\n  \"marketAdj\": false,\n  \"marketSuspended\": true,\n  \"parlay\": false,\n  \"parlaySuspended\": false,\n  \"playerId\": 8183.24326286297,\n  \"sport\": \"string\",\n  \"statTypeId\": 656.8987190255393,\n  \"status\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f566a3cf-e3a0-4fd0-9dc3-201d7df942ea",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "bet-request",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nhl"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c055709f-e831-4cfb-980d-33cce64ae41d",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "bet-request",
+                    "results"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parlay",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "margin",
+                      "value": "0.05"
+                    },
+                    {
+                      "key": "marketAdj",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "sport",
+                      "value": "nhl"
+                    },
+                    {
+                      "key": "playerId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "gameId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "statTypeId",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "line",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "over"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ee68d6a-2859-4e1b-b1dd-17d22dff38ab",
+          "name": "Nhl Matches Markets Prematch",
+          "request": {
+            "name": "Nhl Matches Markets Prematch",
+            "description": {},
+            "url": {
+              "path": [
+                "nhl",
+                "matches",
+                "markets",
+                "prematch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fractional lines or integer lines."
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e927e710-c5f8-48d9-b0be-64c48c0ba316",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "matches",
+                    "markets",
+                    "prematch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2023-04-18"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2023-04-18 23:39:13.129510"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbreviation\": \"string\",\n  \"awaySummaryId\": \"string\",\n  \"balanced\": true,\n  \"count\": 399.14544768853256,\n  \"date\": \"string\",\n  \"description\": \"string\",\n  \"endpoint\": \"string\",\n  \"homeSummaryId\": \"string\",\n  \"id\": 4613.735729997617,\n  \"line\": 949.992468883738,\n  \"marketSuspended\": false,\n  \"matchId\": 5730.184434793339,\n  \"mean\": 6143.571634994753,\n  \"median\": 815.9681429852473,\n  \"micro\": \"string\",\n  \"optimal\": false,\n  \"over\": 5870.975416411158,\n  \"push\": 7434.481995152196,\n  \"resultingId\": \"string\",\n  \"season\": 5109.7022416893105,\n  \"seconds\": \"string\",\n  \"sport\": \"string\",\n  \"type\": \"string\",\n  \"under\": 7795.922904743919\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02ed3b49-c5bd-45eb-801f-adc5641c2583",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "matches",
+                    "markets",
+                    "prematch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2023-04-18"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2023-04-18 23:39:13.129510"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33cb6dd1-33f2-4f07-9817-be72570ce38d",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "matches",
+                    "markets",
+                    "prematch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2023-04-18"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2023-04-18 23:39:13.129510"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c03a8f1-2332-433a-95d6-54fb1d07d128",
+          "name": "Nhl Players Props Inplay",
+          "request": {
+            "name": "Nhl Players Props Inplay",
+            "description": {},
+            "url": {
+              "path": [
+                "nhl",
+                "players",
+                "props",
+                "inplay"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6f5b6f8c-e9af-4053-8dd2-f4f3cca7ee4d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "players",
+                    "props",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2026-04-11 00:20:04.124954"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87a973f8-001c-42ec-97b3-7835791114ea",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "players",
+                    "props",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2026-04-11 00:20:04.124954"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6befcdd2-c0f7-4c19-8503-5e2f969727d9",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "players",
+                    "props",
+                    "inplay"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2026-04-11 00:20:04.124954"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4bf7ca4b-584a-4d67-8a50-bc3e58a77e83",
+          "name": "Nhl Players Props Market Adjusted",
+          "request": {
+            "name": "Nhl Players Props Market Adjusted",
+            "description": {},
+            "url": {
+              "path": [
+                "nhl",
+                "players",
+                "props",
+                "market",
+                "adjusted"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<string>",
+                  "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "game",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+                },
+                {
+                  "disabled": false,
+                  "key": "season",
+                  "value": "<number>",
+                  "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+                },
+                {
+                  "disabled": false,
+                  "key": "optimal",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "balanced",
+                  "value": "<boolean>",
+                  "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+                },
+                {
+                  "disabled": false,
+                  "key": "stat",
+                  "value": "<number>",
+                  "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+                },
+                {
+                  "disabled": false,
+                  "key": "lineType",
+                  "value": "<string>",
+                  "description": "Can be used to request only fractional lines or integer lines."
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedAtMicroGreater",
+                  "value": "<string>",
+                  "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "ApiKey"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0c50b67a-e2d0-4832-b338-7314e4ada3a4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "players",
+                    "props",
+                    "market",
+                    "adjusted"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2020-01-14"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"abbreviation\": \"string\",\n  \"balanced\": false,\n  \"count\": 3583.4061401881877,\n  \"date\": \"string\",\n  \"endpoint\": \"string\",\n  \"home\": true,\n  \"id\": 3208.7794643764832,\n  \"line\": 4679.1994316629325,\n  \"marketSuspended\": true,\n  \"mean\": 9396.17151051274,\n  \"median\": 1422.2180906447313,\n  \"modifiedAt\": \"string\",\n  \"name\": \"string\",\n  \"official\": true,\n  \"open\": true,\n  \"optimal\": false,\n  \"over\": 3398.9624548423913,\n  \"playerId\": 8876.757964956547,\n  \"playerName\": \"string\",\n  \"position\": \"string\",\n  \"push\": 5240.327540602144,\n  \"season\": 1466.3477595433283,\n  \"sport\": \"string\",\n  \"starter\": false,\n  \"under\": 5839.942863185343\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01ba068b-e917-4880-ac92-45dc47187f4a",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "players",
+                    "props",
+                    "market",
+                    "adjusted"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2020-01-14"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de63adf5-a724-4c89-897b-024ba624bbee",
+              "name": "Missing or invalid API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nhl",
+                    "players",
+                    "props",
+                    "market",
+                    "adjusted"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "2020-01-14"
+                    },
+                    {
+                      "key": "game",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "modifiedAtGreater",
+                      "value": "2018-09-09 19:42:29"
+                    },
+                    {
+                      "key": "season",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "optimal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "balanced",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "stat",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "lineType",
+                      "value": "fraction"
+                    },
+                    {
+                      "key": "modifiedAtMicroGreater",
+                      "value": "2018-09-09 19:42:29.317683"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "ApiKey",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": true,\n  \"endpoint\": \"string\",\n  \"error\": {\n    \"status\": false,\n    \"message\": \"string\",\n    \"details\": {}\n  },\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.swishanalytics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "ApiKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bce5f729-be35-4e5e-9259-fc0860a7c40f",
+    "name": "Swish Analytics Sportsbook ATP Tennis NHL API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Machine-learning sportsbook data API from Swish Analytics: player prop pricing, pre-match and in-play match/team markets, bet-request (single and parlay) pricing, and results across NFL, NBA, MLB, NHL, NCAA basketball & football, ATP, WTA and soccer. Derived by the API Evangelist enrichment pipeline from the provider's live documentation service (docs-api.swishanalytics.com/v1). Content is faithful to published docs; not an authoritative provider-published OpenAPI.\n\nContact Support:\n Name: Swish Analytics",
+      "type": "text/plain"
+    }
+  }
+}

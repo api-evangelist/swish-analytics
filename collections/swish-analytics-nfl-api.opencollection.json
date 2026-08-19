@@ -1,0 +1,944 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swish Analytics Sportsbook ATP Tennis NFL API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "ApiKey",
+      "value": "{{ApiKey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NFL",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Nfl Matches Markets Prematch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com//nfl/matches/markets/prematch",
+            "params": [
+              {
+                "name": "date",
+                "value": "2019-11-11",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "game",
+                "value": "2142043",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "stat",
+                "value": "2",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Matches Markets Prematch"
+        },
+        {
+          "info": {
+            "name": "Nfl Bet-request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/bet-request",
+            "params": [
+              {
+                "name": "parlay",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+              },
+              {
+                "name": "margin",
+                "value": "0.05",
+                "type": "query",
+                "description": "Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+              },
+              {
+                "name": "marketAdj",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+              },
+              {
+                "name": "sport",
+                "value": "nfl",
+                "type": "query",
+                "description": "Provides the appropriate 3-letter abbreviation of the sport for which you are requesting data"
+              },
+              {
+                "name": "playerId",
+                "value": "839031",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "teamId",
+                "value": "347",
+                "type": "query",
+                "description": "Specifies the unique teamId associated with each leg you are requesting per props object. When requesting match-level markets that are not specifically tied to one team, teamId is still required, but either teamId from the match is allowed"
+              },
+              {
+                "name": "gameId",
+                "value": "2239443",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "statTypeId",
+                "value": "1",
+                "type": "query",
+                "description": "The ID value of the stat-type for which you are requesting a market. This property accepts a single value per object"
+              },
+              {
+                "name": "line",
+                "value": "270",
+                "type": "query",
+                "description": "The specific line value for which you are requesting pricing. This property accepts a single value per object"
+              },
+              {
+                "name": "lineType",
+                "value": "over",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Bet-request"
+        },
+        {
+          "info": {
+            "name": "Nfl Bet-request Results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/bet-request/results",
+            "params": [
+              {
+                "name": "parlay",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+              },
+              {
+                "name": "margin",
+                "value": "0.05",
+                "type": "query",
+                "description": "Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+              },
+              {
+                "name": "marketAdj",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+              },
+              {
+                "name": "sport",
+                "value": "nfl",
+                "type": "query",
+                "description": "Provides the appropriate 3-letter abbreviation of the sport for which you are requesting data"
+              },
+              {
+                "name": "playerId",
+                "value": "839031",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "teamId",
+                "value": "347",
+                "type": "query",
+                "description": "Specifies the unique teamId associated with each leg you are requesting per props object. When requesting match-level markets that are not specifically tied to one team, teamId is still required, but either teamId from the match is allowed"
+              },
+              {
+                "name": "gameId",
+                "value": "2239443",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "statTypeId",
+                "value": "1",
+                "type": "query",
+                "description": "The ID value of the stat-type for which you are requesting a market. This property accepts a single value per object"
+              },
+              {
+                "name": "line",
+                "value": "270",
+                "type": "query",
+                "description": "The specific line value for which you are requesting pricing. This property accepts a single value per object"
+              },
+              {
+                "name": "lineType",
+                "value": "over",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Bet-request Results"
+        },
+        {
+          "info": {
+            "name": "Nfl Matches Markets Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/matches/markets/inplay",
+            "params": [
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "stat",
+                "value": "2",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "game",
+                "value": "2142043",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "gameId",
+                "value": "2142043",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "date",
+                "value": "2019-11-11",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Matches Markets Inplay"
+        },
+        {
+          "info": {
+            "name": "Nfl Matches Markets Inplay Alternates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/matches/markets/inplay/alternates",
+            "params": [
+              {
+                "name": "game",
+                "value": "2879580",
+                "type": "query",
+                "description": "The ID value of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "stat",
+                "value": "474",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              },
+              {
+                "name": "wasBalanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values"
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2025-09-04 16:20:53.336700",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Matches Markets Inplay Alternates"
+        },
+        {
+          "info": {
+            "name": "Nfl Matches Markets Prematch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/matches/markets/prematch",
+            "params": [
+              {
+                "name": "date",
+                "value": "2019-11-11",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "game",
+                "value": "2142043",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "stat",
+                "value": "2",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Matches Markets Prematch"
+        },
+        {
+          "info": {
+            "name": "Nfl Matches Markets Prematch Alternates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/matches/markets/prematch/alternates",
+            "params": [
+              {
+                "name": "game",
+                "value": "2656437",
+                "type": "query",
+                "description": "The ID value of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "stat",
+                "value": "474",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              },
+              {
+                "name": "wasBalanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values"
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2024-09-04 16:20:53.336700",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Matches Markets Prematch Alternates"
+        },
+        {
+          "info": {
+            "name": "Nfl Players Props Alternates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/players/props/alternates",
+            "params": [
+              {
+                "name": "date",
+                "value": "2019-11-11",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "game",
+                "value": "2142043",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "team",
+                "value": "361",
+                "type": "query",
+                "description": "The ID value(s) of the team(s) for which you are requesting markets."
+              },
+              {
+                "name": "opponent",
+                "value": "350",
+                "type": "query",
+                "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+              },
+              {
+                "name": "player",
+                "value": "264851",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "stat",
+                "value": "2",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "position",
+                "value": "QB",
+                "type": "query",
+                "description": "The common abbreviation for a specified position."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "starter",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets for players classified as either starters (true) or non-starters (false)"
+              },
+              {
+                "name": "week",
+                "value": "10",
+                "type": "query",
+                "description": "The week value(s) for the current or requested week(s) of the season."
+              },
+              {
+                "name": "positionAbbr",
+                "value": "QB",
+                "type": "query",
+                "description": "The common abbreviation for a specified position."
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false)"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Players Props Alternates"
+        },
+        {
+          "info": {
+            "name": "Nfl Players Props Alternates Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/players/props/alternates/inplay",
+            "params": [
+              {
+                "name": "game",
+                "value": "2656437",
+                "type": "query",
+                "description": "The ID value of the event for which you are requesting market data. Accepts only a single value"
+              },
+              {
+                "name": "stat",
+                "value": "16",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data. Accepts multiple, comma-separated values"
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              },
+              {
+                "name": "wasBalanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values"
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2024-08-01 00:29:21.153104",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Players Props Alternates Inplay"
+        },
+        {
+          "info": {
+            "name": "Nfl Players Props Historical",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/players/props/historical",
+            "params": [
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "stat",
+                "value": "2",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "date",
+                "value": "2019-11-11",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "game",
+                "value": "2142043",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "player",
+                "value": "264851",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Players Props Historical"
+        },
+        {
+          "info": {
+            "name": "Nfl Players Props Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/players/props/inplay",
+            "params": [
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "date",
+                "value": "2019-11-11",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "game",
+                "value": "2142043",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "team",
+                "value": "361",
+                "type": "query",
+                "description": "The ID value(s) of the team(s) for which you are requesting markets."
+              },
+              {
+                "name": "opponent",
+                "value": "350",
+                "type": "query",
+                "description": "The ID value(s) of the opposing team(s) for which you are requesting data."
+              },
+              {
+                "name": "player",
+                "value": "264851",
+                "type": "query",
+                "description": "The ID value(s) of the player(s) for which you are requesting data."
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "stat",
+                "value": "2",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "starter",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets for players classified as either starters (true) or non-starters (false)"
+              },
+              {
+                "name": "week",
+                "value": "10",
+                "type": "query",
+                "description": "The week value(s) for the current or requested week(s) of the season."
+              },
+              {
+                "name": "eventTypeId",
+                "value": "1",
+                "type": "query",
+                "description": "The ID value(s) denoting the type of the game(s) for which you are requesting data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Players Props Inplay"
+        },
+        {
+          "info": {
+            "name": "Nfl Players Props Market Adjusted",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/nfl/players/props/market/adjusted",
+            "params": [
+              {
+                "name": "date",
+                "value": "2019-11-11",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "game",
+                "value": "2142043",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "season",
+                "value": "2019",
+                "type": "query",
+                "description": "The 4 digit value(s) for current or requested sport season(s). For sports whose seasons span multiple calendar years, the starting year must be used to fetch data for said season (eg for the 2024-2025 season, use 2024 )"
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "stat",
+                "value": "2",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "week",
+                "value": "10",
+                "type": "query",
+                "description": "The week value(s) for the current or requested week(s) of the season."
+              },
+              {
+                "name": "eventTypeId",
+                "value": "1",
+                "type": "query",
+                "description": "The ID value(s) denoting the type of the game(s) for which you are requesting data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Nfl Players Props Market Adjusted"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

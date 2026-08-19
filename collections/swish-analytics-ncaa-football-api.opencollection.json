@@ -1,0 +1,320 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swish Analytics Sportsbook ATP Tennis NCAA Football API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "ApiKey",
+      "value": "{{ApiKey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NCAA Football",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cfb Matches Markets Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/cfb/matches/markets/inplay",
+            "params": [
+              {
+                "name": "game",
+                "value": "2712443",
+                "type": "query",
+                "description": "The ID value of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "\t2024-08-19 20:04:15.076364",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "stat",
+                "value": "560",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Cfb Matches Markets Inplay"
+        },
+        {
+          "info": {
+            "name": "Cfb Matches Markets Prematch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/cfb/matches/markets/prematch",
+            "params": [
+              {
+                "name": "game",
+                "value": "2541969",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "date",
+                "value": "2023-09-09",
+                "type": "query",
+                "description": "The EST date(s) of the event(s) for which you are requesting schedule data in YYYY-MM-DD format."
+              },
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "stat",
+                "value": "550",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2023-09-10 02:40:35.120365",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Cfb Matches Markets Prematch"
+        },
+        {
+          "info": {
+            "name": "Cfb Matches Markets Prematch Alternates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/cfb/matches/markets/prematch/alternates",
+            "params": [
+              {
+                "name": "game",
+                "value": "2543265",
+                "type": "query",
+                "description": "The ID value of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "stat",
+                "value": "557",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fraction lines or integer lines. Accepts only fraction or integer as values"
+              },
+              {
+                "name": "wasBalanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false). Accepts only true or false as values"
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false). Accepts only true or false as values"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2024-08-19 20:04:15.076364",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Cfb Matches Markets Prematch Alternates"
+        },
+        {
+          "info": {
+            "name": "Cfb Players Props",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/cfb/players/props",
+            "params": [
+              {
+                "name": "optimal",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as optimal (true) or not optimal (false)"
+              },
+              {
+                "name": "balanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets classified as balanced (true) or not balanced (false)"
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "modifiedAtGreater",
+                "value": "2018-09-09 19:42:29",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAt from the most recent payload received"
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2018-09-09 19:42:29.317683",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "game",
+                "value": "2506200",
+                "type": "query",
+                "description": "The ID value(s) of the event(s) for which you are requesting schedule data."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Cfb Players Props"
+        },
+        {
+          "info": {
+            "name": "Cfb Players Props Alternates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/cfb/players/props/alternates",
+            "params": [
+              {
+                "name": "game",
+                "value": "2541893",
+                "type": "query",
+                "description": "The ID value of the event for which you are requesting schedule data."
+              },
+              {
+                "name": "lineType",
+                "value": "fraction",
+                "type": "query",
+                "description": "Can be used to request only fractional lines or integer lines."
+              },
+              {
+                "name": "wasBalanced",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request markets that were previously classified as balanced (true) or were not previously classified as balanced (false)"
+              },
+              {
+                "name": "stat",
+                "value": "501",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2023-10-04 02:47:41.623434",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "milestone",
+                "value": "true",
+                "type": "query",
+                "description": "Can be used to request only those markets classified as milestone lines (true) or not classified as milestone lines (false)"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Cfb Players Props Alternates"
+        },
+        {
+          "info": {
+            "name": "Cfb Players Props Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/cfb/players/props/inplay",
+            "params": [
+              {
+                "name": "game",
+                "value": "2712443",
+                "type": "query",
+                "description": "The ID value of the event(s) for which you are requesting schedule data."
+              },
+              {
+                "name": "modifiedAtMicroGreater",
+                "value": "2024-08-19 20:04:15.076364",
+                "type": "query",
+                "description": "The UTC timestamp(s) denoting when a market was last updated with new data in micro seconds to be used to request all markets that have been updated at or after the timestamp passed in. Value passed in should always be the max modifiedAtMicro from the most recent payload received"
+              },
+              {
+                "name": "stat",
+                "value": "501",
+                "type": "query",
+                "description": "The ID value(s) of the statistic(s) for which you are requesting data."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Cfb Players Props Inplay"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

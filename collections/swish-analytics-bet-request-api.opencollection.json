@@ -1,0 +1,213 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Swish Analytics Sportsbook ATP Tennis Bet Request API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "ApiKey",
+      "value": "{{ApiKey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bet Request",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Bet-request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/bet-request",
+            "params": [
+              {
+                "name": "parlay",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+              },
+              {
+                "name": "margin",
+                "value": "0.05",
+                "type": "query",
+                "description": "Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+              },
+              {
+                "name": "marketAdj",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+              },
+              {
+                "name": "sport",
+                "value": "nba",
+                "type": "query",
+                "description": "Specifies the sport associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "gameId",
+                "value": "2239443",
+                "type": "query",
+                "description": "Specifies the unique gameId associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "playerId",
+                "value": "748788",
+                "type": "query",
+                "description": "Specifies the unique playerId associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "teamId",
+                "value": "137",
+                "type": "query",
+                "description": "Specifies the unique teamId associated with each leg you are requesting per props object. When requesting match-level markets that are not specifically tied to one team, teamId is still required, but either teamId from the match is allowed"
+              },
+              {
+                "name": "statTypeId",
+                "value": "100",
+                "type": "query",
+                "description": "Specifies the unique statTypeId associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "lineType",
+                "value": "over",
+                "type": "query",
+                "description": "Specifies the selection of the bet associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "line",
+                "value": "24.5",
+                "type": "query",
+                "description": "Specifies the specific line of the bet associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "ignoreNegCorrelation",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies whether you want your request to return a price without negative correlation adjustments (true) or with negative correlation adjustments (false). This parameter is optional; if you do not include it, each request will continue to default to stan"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Bet-request"
+        },
+        {
+          "info": {
+            "name": "Bet-request Inplay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/bet-request/inplay",
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Bet-request Inplay"
+        },
+        {
+          "info": {
+            "name": "Bet-request Results",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.swishanalytics.com/bet-request/results",
+            "params": [
+              {
+                "name": "parlay",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a bet request for an accumulator (true) or a single market (false)"
+              },
+              {
+                "name": "margin",
+                "value": "0.05",
+                "type": "query",
+                "description": "Specifies the margin you would like applied to the returned market. Margin must be a value from 0 to 1 & accepts up to 3 decimal places"
+              },
+              {
+                "name": "marketAdj",
+                "value": "true",
+                "type": "query",
+                "description": "Specifies if this is a request for markets using our market adjusted (true) or non-market adjusted (false) lines"
+              },
+              {
+                "name": "sport",
+                "value": "nba",
+                "type": "query",
+                "description": "Specifies the sport associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "gameId",
+                "value": "2239443",
+                "type": "query",
+                "description": "Specifies the unique gameId associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "playerId",
+                "value": "748788",
+                "type": "query",
+                "description": "Specifies the unique playerId associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "teamId",
+                "value": "137",
+                "type": "query",
+                "description": "Specifies the unique teamId associated with each leg you are requesting per props object. When requesting match-level markets that are not specifically tied to one team, teamId is still required, but either teamId from the match is allowed"
+              },
+              {
+                "name": "statTypeId",
+                "value": "100",
+                "type": "query",
+                "description": "Specifies the unique statTypeId associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "lineType",
+                "value": "over",
+                "type": "query",
+                "description": "Specifies the selection of the bet associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "line",
+                "value": "24.5",
+                "type": "query",
+                "description": "Specifies the specific line of the bet associated with each leg you are requesting per props object"
+              },
+              {
+                "name": "type",
+                "value": "inplay",
+                "type": "query",
+                "description": "Specific to Soccer, this parameter notates the type of resulting you are requesting as it pertains to whether or not a player started the match or substituted. For example: passing prematch would void markets for players that did not start the match, whereas passing inplay would not void if a player does not start the match if they enter the game as a substitute."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "ApiKey",
+              "value": "{{ApiKey}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Bet-request Results"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
