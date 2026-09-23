@@ -1,16 +1,7 @@
 {
   "provider": "swish-analytics",
   "sources": [
-    "swish-analytics-atp-tennis-api-openapi.yml",
-    "swish-analytics-bet-request-api-openapi.yml",
-    "swish-analytics-mlb-api-openapi.yml",
-    "swish-analytics-nba-api-openapi.yml",
-    "swish-analytics-ncaa-basketball-api-openapi.yml",
-    "swish-analytics-ncaa-football-api-openapi.yml",
-    "swish-analytics-nfl-api-openapi.yml",
-    "swish-analytics-nhl-api-openapi.yml",
-    "swish-analytics-soccer-api-openapi.yml",
-    "swish-analytics-wta-tennis-api-openapi.yml"
+    "_original/swish-analytics-sportsbook-openapi.yml"
   ],
   "outputs": [
     "swish-analytics-atp-tennis-api-openapi.yml",
@@ -27,6 +18,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "swish-analytics-sportsbook-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "swish-analytics-atp-tennis-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swish-analytics-bet-request-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swish-analytics-mlb-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swish-analytics-nba-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swish-analytics-ncaa-basketball-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swish-analytics-ncaa-football-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swish-analytics-nfl-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swish-analytics-nhl-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swish-analytics-soccer-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "swish-analytics-wta-tennis-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
